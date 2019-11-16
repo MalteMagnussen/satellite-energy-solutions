@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/satellite-energy-solutions/static/css/main.34de6062.chunk.css",
+    "main.js": "/satellite-energy-solutions/static/js/main.4ee2b615.chunk.js",
+    "main.js.map": "/satellite-energy-solutions/static/js/main.4ee2b615.chunk.js.map",
+    "runtime-main.js": "/satellite-energy-solutions/static/js/runtime-main.7c971ae5.js",
+    "runtime-main.js.map": "/satellite-energy-solutions/static/js/runtime-main.7c971ae5.js.map",
+    "static/css/2.b0bb7f2c.chunk.css": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.5cd9115d.chunk.js": "/satellite-energy-solutions/static/js/2.5cd9115d.chunk.js",
+    "static/js/2.5cd9115d.chunk.js.map": "/satellite-energy-solutions/static/js/2.5cd9115d.chunk.js.map",
+    "index.html": "/satellite-energy-solutions/index.html",
+    "precache-manifest.03c9ca7f66f33c07c303d9aa52e797ae.js": "/satellite-energy-solutions/precache-manifest.03c9ca7f66f33c07c303d9aa52e797ae.js",
+    "service-worker.js": "/satellite-energy-solutions/service-worker.js",
+    "static/css/2.b0bb7f2c.chunk.css.map": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css.map",
+    "static/css/main.34de6062.chunk.css.map": "/satellite-energy-solutions/static/css/main.34de6062.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7c971ae5.js",
+    "static/css/2.b0bb7f2c.chunk.css",
+    "static/js/2.5cd9115d.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.4ee2b615.chunk.js"
+  ]
+}
