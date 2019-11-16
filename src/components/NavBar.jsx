@@ -9,7 +9,7 @@ const NavBar = () => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#/">Home</Nav.Link>
-          <Nav.Link href="#/info">Info</Nav.Link>
+          <Nav.Link href="#/info/problem">Info</Nav.Link>
           <Nav.Link href="#/team">Team</Nav.Link>
         </Nav>
       </Navbar.Collapse>
