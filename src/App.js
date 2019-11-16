@@ -1,9 +1,9 @@
 import React from "react";
-import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import NavBar from "./components/NavBar.jsx";
-import { HashRouter, Link, Route } from "react-router-dom";
-import HomePage from "./components/HomePage.jsx";
-import TeamPage from "./components/TeamPage.jsx";
+import { HashRouter, Route } from "react-router-dom";
+import HomePage from "./components/home/HomePage.jsx";
+import TeamPage from "./components/team/TeamPage.jsx";
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <br></br>
         <HashRouter>
           <Route path="/team" component={TeamPage} />
+          <Route path="/info" />
           <Route exact path="/" component={HomePage} />
         </HashRouter>
       </Container>
