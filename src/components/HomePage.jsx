@@ -1,9 +1,22 @@
 import React from "react";
+import { Jumbotron, Button } from "react-bootstrap";
 
 const HomePage = () => {
+  const learnMore = () => {
+    // Do something when Learn More button is pressed.
+  };
+
   return (
     <>
-      <h1>This is / HomePage</h1>
+      <Jumbotron>
+        <h1>Satellite Energy Solutions</h1>
+        <p>Energy Price Forecasting.</p>
+        <p>
+          <Button variant="primary" onClick={learnMore}>
+            Learn more
+          </Button>
+        </p>
+      </Jumbotron>
     </>
   );
 };
