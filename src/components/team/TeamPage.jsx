@@ -4,7 +4,7 @@ import { Card } from "react-bootstrap";
 const TeamPage = () => {
   return (
     <>
-      <h1>The Team: </h1>
+      <h1>The Team</h1>
 
       <MyCard
         name={"August Axel Zachariae"}
