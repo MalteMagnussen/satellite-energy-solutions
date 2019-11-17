@@ -1,6 +1,7 @@
 import React from "react";
-import { Card, Nav, Button, ListGroup } from "react-bootstrap";
+import { Card, Nav, Button, ListGroup, Image } from "react-bootstrap";
 import { HashRouter, Route, Switch } from "react-router-dom";
+import styles from "./infoStyle.module.css";
 
 const InfoPage = () => {
   const match = "#/info";
@@ -36,6 +37,8 @@ const InfoPage = () => {
               <Route path="/customer" component={Customer} />
               <Route path="/solution" component={Solution} />
               <Route path="/value" component={Value} />
+              <Route path="/financials" component={Financials} />
+              <Route path="/impact" component={Impact} />
             </Switch>
           </HashRouter>
         </Card.Body>
@@ -122,14 +125,42 @@ const Value = () => {
   );
 };
 
-const CardExample = () => {
+const Financials = () => {
   return (
     <>
-      <Card.Title>Special title treatment</Card.Title>
+      <Card.Title>Financials</Card.Title>
       <Card.Text>
-        With supporting text below as a natural lead-in to additional content.
+        The data and services will be used to create an online platform, with a
+        subscription-based business model. Subscribing companies will be charged
+        an annual fee depending on the company size. We plan to build our
+        business model based on the business model Wind Europe utilizes.
       </Card.Text>
-      <Button variant="primary">Go somewhere</Button>
+      <Button
+        variant="primary"
+        href="https://windeurope.org/wp-content/uploads/files/membership/WindEurope-Membership-Contract.pdf"
+      >
+        Wind Europe Contract
+      </Button>
+    </>
+  );
+};
+
+const Impact = () => {
+  return (
+    <>
+      <Card.Title>Impact</Card.Title>
+      <Card.Text>
+        We hope that our platform can aid in an efficient transition of the
+        energy sector. Aiding companies with correct evaluations and analysis
+        will lead to informed decision making on the green energy sector to the
+        benefit of SDG 7 “affordable and clean energy”.
+        <br />
+        <Image
+          src={require("./sdg.png")}
+          rounded
+          className={styles.greenImage}
+        />
+      </Card.Text>
     </>
   );
 };
