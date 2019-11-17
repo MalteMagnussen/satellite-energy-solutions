@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/satellite-energy-solutions/static/css/main.34de6062.chunk.css",
-    "main.js": "/satellite-energy-solutions/static/js/main.189d0819.chunk.js",
-    "main.js.map": "/satellite-energy-solutions/static/js/main.189d0819.chunk.js.map",
+    "main.css": "/satellite-energy-solutions/static/css/main.d8006088.chunk.css",
+    "main.js": "/satellite-energy-solutions/static/js/main.45e6e021.chunk.js",
+    "main.js.map": "/satellite-energy-solutions/static/js/main.45e6e021.chunk.js.map",
     "runtime-main.js": "/satellite-energy-solutions/static/js/runtime-main.7c971ae5.js",
     "runtime-main.js.map": "/satellite-energy-solutions/static/js/runtime-main.7c971ae5.js.map",
     "static/css/2.b0bb7f2c.chunk.css": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.b2003bd1.chunk.js": "/satellite-energy-solutions/static/js/2.b2003bd1.chunk.js",
-    "static/js/2.b2003bd1.chunk.js.map": "/satellite-energy-solutions/static/js/2.b2003bd1.chunk.js.map",
+    "static/js/2.b3625f66.chunk.js": "/satellite-energy-solutions/static/js/2.b3625f66.chunk.js",
+    "static/js/2.b3625f66.chunk.js.map": "/satellite-energy-solutions/static/js/2.b3625f66.chunk.js.map",
     "index.html": "/satellite-energy-solutions/index.html",
-    "precache-manifest.e30e61d8a06bb25fc065e69beaebb48e.js": "/satellite-energy-solutions/precache-manifest.e30e61d8a06bb25fc065e69beaebb48e.js",
+    "precache-manifest.5b6907970eec3af6664762fe324fd00f.js": "/satellite-energy-solutions/precache-manifest.5b6907970eec3af6664762fe324fd00f.js",
     "service-worker.js": "/satellite-energy-solutions/service-worker.js",
     "static/css/2.b0bb7f2c.chunk.css.map": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css.map",
-    "static/css/main.34de6062.chunk.css.map": "/satellite-energy-solutions/static/css/main.34de6062.chunk.css.map"
+    "static/css/main.d8006088.chunk.css.map": "/satellite-energy-solutions/static/css/main.d8006088.chunk.css.map",
+    "static/media/sdg.png": "/satellite-energy-solutions/static/media/sdg.90a36670.png"
   },
   "entrypoints": [
     "static/js/runtime-main.7c971ae5.js",
     "static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.b2003bd1.chunk.js",
-    "static/css/main.34de6062.chunk.css",
-    "static/js/main.189d0819.chunk.js"
+    "static/js/2.b3625f66.chunk.js",
+    "static/css/main.d8006088.chunk.css",
+    "static/js/main.45e6e021.chunk.js"
   ]
 }
