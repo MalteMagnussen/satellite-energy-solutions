@@ -1,21 +1,16 @@
 import React from "react";
-import { Jumbotron, Button } from "react-bootstrap";
+import { Jumbotron } from "react-bootstrap";
+import LinkButton from "../util/LinkButton.jsx";
 
 const HomePage = () => {
-  const learnMore = () => {
-    // Do something when Learn More button is pressed.
-  };
-
   return (
     <>
       <Jumbotron>
         <h1>Satellite Energy Solutions</h1>
         <JumboTronText />
-        <p>
-          <Button variant="primary" onClick={learnMore}>
-            Learn more
-          </Button>
-        </p>
+        <LinkButton variant="primary" to="/info/problem">
+          Learn more
+        </LinkButton>
       </Jumbotron>
     </>
   );
