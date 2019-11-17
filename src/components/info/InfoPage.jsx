@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Nav, Button } from "react-bootstrap";
+import { Card, Nav, Button, ListGroup } from "react-bootstrap";
 import { HashRouter, Route, Switch } from "react-router-dom";
 
 const InfoPage = () => {
@@ -35,6 +35,7 @@ const InfoPage = () => {
               <Route path={`/problem`} component={Problem} />
               <Route path="/customer" component={Customer} />
               <Route path="/solution" component={Solution} />
+              <Route path="/value" component={Value} />
             </Switch>
           </HashRouter>
         </Card.Body>
@@ -93,6 +94,30 @@ const Solution = () => {
       <Button variant="primary" href="http://www.balmorel.com/">
         BALMOREL
       </Button>
+    </>
+  );
+};
+
+const Value = () => {
+  return (
+    <>
+      <Card.Title>Four Unique Value Propositions</Card.Title>
+      <Card.Text>
+        <ListGroup>
+          <ListGroup.Item>
+            User-friendly wind & electricity price data access
+          </ListGroup.Item>
+          <ListGroup.Item>
+            Improves concurrent electricity price estimation with price margins
+          </ListGroup.Item>
+          <ListGroup.Item>
+            Electricity price & wind production forecasting – near and long term
+          </ListGroup.Item>
+          <ListGroup.Item>
+            Consistent database for the entirety of Europe
+          </ListGroup.Item>
+        </ListGroup>
+      </Card.Text>
     </>
   );
 };
