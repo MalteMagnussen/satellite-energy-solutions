@@ -30,11 +30,11 @@ const InfoPage = () => {
           </Nav>
         </Card.Header>
         <Card.Body>
-          <HashRouter>
+          <HashRouter basename="/info">
             <Switch>
-              <Route path={`/info/problem`} component={Problem} />
-              <Route path="/info/customer" component={Customer} />
-              <Route path="/info/solution" component={Solution} />
+              <Route path={`/problem`} component={Problem} />
+              <Route path="/customer" component={Customer} />
+              <Route path="/solution" component={Solution} />
             </Switch>
           </HashRouter>
         </Card.Body>

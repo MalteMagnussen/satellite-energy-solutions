@@ -17,9 +17,7 @@ function App() {
             <Route path="/team" component={TeamPage} />
             <Route path="/info" component={InfoPage} />
             <Route exact path="/" component={HomePage} />
-            <Route path="*">
-              <NoMatch />
-            </Route>
+            <Route path="*" component={NoMatch} />
           </Switch>
         </HashRouter>
       </Container>
