@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/satellite-energy-solutions/precache-manifest.7e88664df9c19b2a6f3d7f45798263c8.js"
+  "/satellite-energy-solutions/precache-manifest.b47aeb0b1149b99deab0e04b20286996.js"
 );
 
 self.addEventListener('message', (event) => {
