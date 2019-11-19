@@ -28,6 +28,8 @@ const HomePage = () => {
       <br></br>
       <MyFrontPageCardDeck />
       <br></br>
+      <br />
+      <br />
       <Footer />
     </>
   );
