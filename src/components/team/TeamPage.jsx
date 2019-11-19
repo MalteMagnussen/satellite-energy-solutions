@@ -69,6 +69,8 @@ const TeamPage = () => {
           </Card.Footer>
         </Card>
       </CardDeck>
+      <br></br>
+      <br />
     </>
   );
 };
