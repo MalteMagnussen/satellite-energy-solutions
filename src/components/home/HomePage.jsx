@@ -1,17 +1,55 @@
 import React from "react";
-import { Jumbotron } from "react-bootstrap";
+import { Container, Card } from "react-bootstrap";
 import LinkButton from "../util/LinkButton.jsx";
+import windTurbine from "./img/cover.png";
 
 const HomePage = () => {
   return (
     <>
-      <Jumbotron>
-        <h1>Satellite Energy Solutions</h1>
-        <JumboTronText />
-        <LinkButton variant="primary" to="/info/problem">
-          Learn more
-        </LinkButton>
-      </Jumbotron>
+      <h1 style={{ marginLeft: "50px" }}>
+        Satellite Energy Solutions supplies precise projections and data for
+        your renewable business case
+      </h1>
+      <br></br>
+      <br></br>
+      <br></br>
+      <div>
+        <Card className="bg-dark text-white">
+          <Card.Img src={windTurbine} alt="Card image" />
+          <Card.ImgOverlay style={{ marginTop: "130px" }}>
+            <Card.Title>
+              <h3>
+                <b>
+                  Get better data and projections for your renewable business
+                  case needs.
+                </b>
+              </h3>
+            </Card.Title>
+            <Card.Text>
+              <b>
+                Satellite Energy solutions provides precise electricity price,
+                and wind turbine productions forecasts as well as high
+                resolution data from 1985-2050.
+              </b>
+            </Card.Text>
+          </Card.ImgOverlay>
+        </Card>
+      </div>
+      <br></br>
+      <br></br>
+      <Container>
+        <h1>Discover our services</h1>
+        <div style={{ width: "700px" }}>
+          <h6>
+            Our company use satellite data supplied by the European Space Agency
+            and we use state of the art energy system models to supply you with
+            high quality data and projections.
+          </h6>
+        </div>
+      </Container>
+      <LinkButton variant="primary" to="/info/problem">
+        Learn more
+      </LinkButton>
     </>
   );
 };
