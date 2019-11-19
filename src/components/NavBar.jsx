@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Nav } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const NavBar = () => {
   return (
@@ -14,6 +14,21 @@ const NavBar = () => {
           <Nav.Link href="#/about">About</Nav.Link>
           <Nav.Link href="#/info/problem">Info</Nav.Link>
           <Nav.Link href="#/team">Team</Nav.Link>
+          <NavDropdown title="Data" id="basic-nav-dropdown">
+            <NavDropdown.Item href="#/satellite-data">
+              Access our Satellite Data
+            </NavDropdown.Item>
+            <NavDropdown.Divider></NavDropdown.Divider>
+            <NavDropdown.Item href="#action/3.2" disabled>
+              Ready to use Electricity Price Projections
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3" disabled>
+              Wind Turbine Production Forecasts
+            </NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.4" disabled>
+              Screening Maps of Production
+            </NavDropdown.Item>
+          </NavDropdown>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
