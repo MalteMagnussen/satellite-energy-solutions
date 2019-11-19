@@ -4,6 +4,7 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./components/home/HomePage.jsx";
 import TeamPage from "./components/team/TeamPage.jsx";
 import InfoPage from "./components/info/InfoPage.jsx";
+import AboutPage from "./components/about/AboutPage.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Switch>
           <Route path="/team" component={TeamPage} />
           <Route path="/info" component={InfoPage} />
+          <Route path="/about" component={AboutPage} />
           <Route exact path="/" component={HomePage} />
           <Route path="*" component={NoMatch} />
         </Switch>
