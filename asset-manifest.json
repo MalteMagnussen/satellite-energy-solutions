@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/satellite-energy-solutions/static/css/main.d91cb783.chunk.css",
-    "main.js": "/satellite-energy-solutions/static/js/main.056dea5c.chunk.js",
-    "main.js.map": "/satellite-energy-solutions/static/js/main.056dea5c.chunk.js.map",
+    "main.js": "/satellite-energy-solutions/static/js/main.5f41332e.chunk.js",
+    "main.js.map": "/satellite-energy-solutions/static/js/main.5f41332e.chunk.js.map",
     "runtime-main.js": "/satellite-energy-solutions/static/js/runtime-main.7c971ae5.js",
     "runtime-main.js.map": "/satellite-energy-solutions/static/js/runtime-main.7c971ae5.js.map",
     "static/css/2.b0bb7f2c.chunk.css": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.516cf20c.chunk.js": "/satellite-energy-solutions/static/js/2.516cf20c.chunk.js",
-    "static/js/2.516cf20c.chunk.js.map": "/satellite-energy-solutions/static/js/2.516cf20c.chunk.js.map",
+    "static/js/2.5a749d31.chunk.js": "/satellite-energy-solutions/static/js/2.5a749d31.chunk.js",
+    "static/js/2.5a749d31.chunk.js.map": "/satellite-energy-solutions/static/js/2.5a749d31.chunk.js.map",
     "index.html": "/satellite-energy-solutions/index.html",
-    "precache-manifest.51cea878cc72c2d3adc8cb31c8bf0997.js": "/satellite-energy-solutions/precache-manifest.51cea878cc72c2d3adc8cb31c8bf0997.js",
+    "precache-manifest.99bb36dc08a1aed4e32626d38e60175b.js": "/satellite-energy-solutions/precache-manifest.99bb36dc08a1aed4e32626d38e60175b.js",
     "service-worker.js": "/satellite-energy-solutions/service-worker.js",
     "static/css/2.b0bb7f2c.chunk.css.map": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css.map",
     "static/css/main.d91cb783.chunk.css.map": "/satellite-energy-solutions/static/css/main.d91cb783.chunk.css.map",
@@ -22,13 +22,14 @@
     "static/media/power.jpg": "/satellite-energy-solutions/static/media/power.90293e1e.jpg",
     "static/media/satellite.jpg": "/satellite-energy-solutions/static/media/satellite.f980e746.jpg",
     "static/media/sdg.png": "/satellite-energy-solutions/static/media/sdg.90a36670.png",
+    "static/media/team.jpeg": "/satellite-energy-solutions/static/media/team.6f81cda6.jpeg",
     "static/media/windTurbineBelow.jpg": "/satellite-energy-solutions/static/media/windTurbineBelow.27556bc4.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.7c971ae5.js",
     "static/css/2.b0bb7f2c.chunk.css",
-    "static/js/2.516cf20c.chunk.js",
+    "static/js/2.5a749d31.chunk.js",
     "static/css/main.d91cb783.chunk.css",
-    "static/js/main.056dea5c.chunk.js"
+    "static/js/main.5f41332e.chunk.js"
   ]
 }
