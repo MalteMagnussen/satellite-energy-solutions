@@ -1,27 +1,39 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ec8f221841d9dc88f9b043356e9a373e",
+    "revision": "fd47260b757f0df52d99bb9b7fe3010b",
     "url": "/satellite-energy-solutions/index.html"
   },
   {
-    "revision": "59862ee3ed6f11809869",
+    "revision": "71794a60c47fb6df671e",
     "url": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "35b4d7b266d65ba02fdd",
-    "url": "/satellite-energy-solutions/static/css/main.d8006088.chunk.css"
+    "revision": "9c4358f13cfbc4352a59",
+    "url": "/satellite-energy-solutions/static/css/main.d91cb783.chunk.css"
   },
   {
-    "revision": "59862ee3ed6f11809869",
-    "url": "/satellite-energy-solutions/static/js/2.5300cde1.chunk.js"
+    "revision": "71794a60c47fb6df671e",
+    "url": "/satellite-energy-solutions/static/js/2.516cf20c.chunk.js"
   },
   {
-    "revision": "35b4d7b266d65ba02fdd",
-    "url": "/satellite-energy-solutions/static/js/main.f6e478a3.chunk.js"
+    "revision": "9c4358f13cfbc4352a59",
+    "url": "/satellite-energy-solutions/static/js/main.378cef40.chunk.js"
   },
   {
     "revision": "9dff4aad2f8da5f69f5a",
     "url": "/satellite-energy-solutions/static/js/runtime-main.7c971ae5.js"
+  },
+  {
+    "revision": "9437c17e67586f5ed7bdb45c6ac8441a",
+    "url": "/satellite-energy-solutions/static/media/Andreas.9437c17e.jpg"
+  },
+  {
+    "revision": "1fcfd19c76fb9ec4aa1c437841964cf0",
+    "url": "/satellite-energy-solutions/static/media/August.1fcfd19c.jpg"
+  },
+  {
+    "revision": "10aad310309c9ee4630c452141ccf6d0",
+    "url": "/satellite-energy-solutions/static/media/Malte.10aad310.png"
   },
   {
     "revision": "9e9c13e0e54c618a44ca8b13fb9ad433",
