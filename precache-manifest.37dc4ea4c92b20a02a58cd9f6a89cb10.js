@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b9bd8b956d8961e602ce3318b6c7ad73",
+    "revision": "c3dd999a8eb59c1b51dc800570d5d21d",
     "url": "/satellite-energy-solutions/index.html"
   },
   {
-    "revision": "ad09d1921b66425750ea",
+    "revision": "59862ee3ed6f11809869",
     "url": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "7bcbc6670de19f3caeb2",
+    "revision": "8085ae301002117a08a2",
     "url": "/satellite-energy-solutions/static/css/main.d8006088.chunk.css"
   },
   {
-    "revision": "ad09d1921b66425750ea",
-    "url": "/satellite-energy-solutions/static/js/2.addd8fbb.chunk.js"
+    "revision": "59862ee3ed6f11809869",
+    "url": "/satellite-energy-solutions/static/js/2.5300cde1.chunk.js"
   },
   {
-    "revision": "7bcbc6670de19f3caeb2",
-    "url": "/satellite-energy-solutions/static/js/main.d4534391.chunk.js"
+    "revision": "8085ae301002117a08a2",
+    "url": "/satellite-energy-solutions/static/js/main.8a688d1c.chunk.js"
   },
   {
     "revision": "9dff4aad2f8da5f69f5a",
@@ -30,6 +30,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "72af6984c8ab8f4466fe724570e16b7a",
     "url": "/satellite-energy-solutions/static/media/cover.72af6984.png"
+  },
+  {
+    "revision": "ccdad26b69502f4e28f35180e2e2152f",
+    "url": "/satellite-energy-solutions/static/media/footer.ccdad26b.png"
   },
   {
     "revision": "90293e1e70e63cd87af9127c9f3362a7",
