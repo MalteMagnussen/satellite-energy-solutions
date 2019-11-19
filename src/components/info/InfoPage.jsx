@@ -1,5 +1,12 @@
 import React from "react";
-import { Card, Nav, Button, ListGroup, Image } from "react-bootstrap";
+import {
+  Card,
+  Nav,
+  Button,
+  ListGroup,
+  Image,
+  Container
+} from "react-bootstrap";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import styles from "./infoStyle.module.css";
 
@@ -7,42 +14,44 @@ const InfoPage = () => {
   const match = "#/info";
   return (
     <>
-      <Card>
-        <Card.Header>
-          <Nav variant="tabs" defaultActiveKey={`${match}/problem`}>
-            <Nav.Item>
-              <Nav.Link href={`${match}/problem`}>Problem</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href={`${match}/customer`}>Customer</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href={`${match}/solution`}>Solution</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href={`${match}/value`}>Value</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href={`${match}/financials`}>Financials</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href={`${match}/impact`}>Impact</Nav.Link>
-            </Nav.Item>
-          </Nav>
-        </Card.Header>
-        <Card.Body>
-          <HashRouter basename="/info">
-            <Switch>
-              <Route path={`/problem`} component={Problem} />
-              <Route path="/customer" component={Customer} />
-              <Route path="/solution" component={Solution} />
-              <Route path="/value" component={Value} />
-              <Route path="/financials" component={Financials} />
-              <Route path="/impact" component={Impact} />
-            </Switch>
-          </HashRouter>
-        </Card.Body>
-      </Card>
+      <Container>
+        <Card>
+          <Card.Header>
+            <Nav variant="tabs" defaultActiveKey={`${match}/problem`}>
+              <Nav.Item>
+                <Nav.Link href={`${match}/problem`}>Problem</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href={`${match}/customer`}>Customer</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href={`${match}/solution`}>Solution</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href={`${match}/value`}>Value</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href={`${match}/financials`}>Financials</Nav.Link>
+              </Nav.Item>
+              <Nav.Item>
+                <Nav.Link href={`${match}/impact`}>Impact</Nav.Link>
+              </Nav.Item>
+            </Nav>
+          </Card.Header>
+          <Card.Body>
+            <HashRouter basename="/info">
+              <Switch>
+                <Route path={`/problem`} component={Problem} />
+                <Route path="/customer" component={Customer} />
+                <Route path="/solution" component={Solution} />
+                <Route path="/value" component={Value} />
+                <Route path="/financials" component={Financials} />
+                <Route path="/impact" component={Impact} />
+              </Switch>
+            </HashRouter>
+          </Card.Body>
+        </Card>
+      </Container>
     </>
   );
 };

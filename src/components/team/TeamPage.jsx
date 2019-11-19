@@ -1,80 +1,76 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Card, CardDeck } from "react-bootstrap";
+import MalteImg from "./img/Malte.png";
+import AugustImg from "./img/August.jpg";
+import AndreasImg from "./img/Andreas.jpg";
 
 const TeamPage = () => {
   return (
     <>
-      <h1>The Team</h1>
+      <h1 style={{ textAlign: "center" }}>Meet the founders</h1>
 
-      <MyCard
-        name={"August Axel Zachariae"}
-        subtitle={
-          "Bsc. Environmental Engineering & Msc.stud Sustainable energy engineering"
-        }
-        text={textMap.august}
-        email={"august_zachariae@hotmail.com"}
-      />
-
-      <MyCard
-        name={"Andreas Stokholm"}
-        subtitle={`Bsc. Electrical Engineering & Msc.stud Electrical
-      Engineering specializing in Space Technology`}
-        text={textMap.andreas}
-        email={"stokholm@space.dtu.dk"}
-      />
-
-      <MyCard
-        name={"Malte Hviid-Magnussen"}
-        subtitle={`Studying to get an Academy Profession Degree in
-        Computer Science at Cphbusiness Lyngby`}
-        text={textMap.malte}
-        email={`maltehviidmagnussen@gmail.com`}
-      />
+      <br></br>
+      <br />
+      <br />
+      <br />
+      <CardDeck>
+        <Card>
+          <Card.Img variant="top" src={AugustImg} />
+          <Card.Body>
+            <Card.Title>August Zachariae</Card.Title>
+            <Card.Text>
+              Sustainable energy engineer educated at Technical University of
+              Denmark. August began his career doing electricity price
+              forecasting and economic feasibility studies in Copenhagen. August
+              will use his skills in the field to make electricity price
+              projections and production forecasts.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">
+              <a href="mailto:august_zachariae@hotmail.com">
+                august_zachariae@hotmail.com
+              </a>
+            </small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src={AndreasImg} />
+          <Card.Body>
+            <Card.Title>Andreas Stokholm</Card.Title>
+            <Card.Text>
+              As an educated electrical engineer from the Technical University
+              of Denmark working at the space institute at the university.
+              Andreas has had plenty of experience working with big data from
+              satellites.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">
+              <a href="mailto:stokholm@space.dtu.dk">stokholm@space.dtu.dk</a>
+            </small>
+          </Card.Footer>
+        </Card>
+        <Card>
+          <Card.Img variant="top" src={MalteImg} />
+          <Card.Body>
+            <Card.Title>Malte Hviid-Magnussen</Card.Title>
+            <Card.Text>
+              As a top student at CPH Business studying computer science, Malte
+              maintains SES’ IT-systems and websites.
+            </Card.Text>
+          </Card.Body>
+          <Card.Footer>
+            <small className="text-muted">
+              <a href="mailto:maltehviidmagnussen@gmail.com">
+                maltehviidmagnussen@gmail.com
+              </a>
+            </small>
+          </Card.Footer>
+        </Card>
+      </CardDeck>
     </>
   );
-};
-
-const MyCard = ({ name, subtitle, text, email, image }) => {
-  const link = "mailto:" + email;
-  // For card image:     <Card.Img variant="top" src="image" />
-
-  return (
-    <>
-      <Card style={{ width: "48rem", marginBottom: "20px" }}>
-        <Card.Body>
-          <Card.Title>{name}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{subtitle}</Card.Subtitle>
-          <Card.Text>{text}</Card.Text>
-          <Card.Link href={link}>{email}</Card.Link>
-        </Card.Body>
-      </Card>
-    </>
-  );
-};
-
-const textMap = {
-  august: `August will take responsibility for the energy price simulations and
-  production forecasts. He studies and works within the field of
-  energy system simulation and feasibility analysis of energy
-  projects. His skills are within price and energy system forecasting
-  and insights from his work from the energy industry, working in the
-  energy analysis team in HOFOR doing electricity price forecasting
-  and business cases. August wants to take on a new challenge and
-  prove we do it better.`,
-  andreas: `Andreas will be the main
-  responsible for working with the Copernicus data and setting up the
-  screening mapping services. He has been heavily immersed in big data
-  Earth Observation processing & analysis with experience as a Student
-  Assistant at the Danish National Space Institute, DTU Space. Creating
-  value for society and helping reach the SDGs is a great motivator,
-  specifically in terms of goals 13, Climate Change, and 7, Sustainable
-  Energy.`,
-  malte: `Malte will be mainly
-  responsible for building the online platform, both in concern to system
-  development and front/back end development. Maltes skills are in
-  software programming: Java, JavaScript, React, and SQL. Malte is
-  motivated by a chance to apply his skills in a real-world project and
-  wanting to collaborate with his partners.`
 };
 
 export default TeamPage;
