@@ -15,8 +15,8 @@ const HomePage = () => {
   return (
     <>
       <h1 style={{ marginLeft: "50px" }}>
-        Satellite Energy Solutions supplies precise projections and data for
-        your renewable business case
+        Satellite Energy Solutions supplies precise projections <br></br>and
+        data for your renewable business case
       </h1>
       <br></br>
       <br></br>
