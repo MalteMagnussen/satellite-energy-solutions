@@ -63,7 +63,7 @@ const WindTurbineCard = () => {
     <div>
       <Card className="bg-dark text-white">
         <Card.Img src={windTurbine} alt="Card image" />
-        <Card.ImgOverlay style={{ marginTop: "130px" }}>
+        <Card.ImgOverlay style={{ marginTop: "130px", marginLeft: "30px" }}>
           <Card.Title>
             <h3>
               <b>
