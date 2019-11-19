@@ -6,6 +6,7 @@ import satellite from "./img/satellite.jpg";
 import power from "./img/power.jpg";
 import windTurbineBelow from "./img/windTurbineBelow.jpg";
 import screeningMap from "./img/ScreeningMap.png";
+import { Link } from "react-router-dom";
 
 const cardImageStyle = {
   height: "400px"
@@ -111,7 +112,9 @@ const MyFrontPageCardDeck = () => {
       <Container>
         <CardDeck>
           <Card>
-            <Card.Img variant="top" src={satellite} style={cardImageStyle} />
+            <a href="#/satellite-data">
+              <Card.Img variant="top" src={satellite} style={cardImageStyle} />
+            </a>
             <Card.Body>
               <Card.Title>Access our satellite data and more</Card.Title>
             </Card.Body>

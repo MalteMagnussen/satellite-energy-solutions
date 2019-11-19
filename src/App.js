@@ -5,6 +5,7 @@ import HomePage from "./components/home/HomePage.jsx";
 import TeamPage from "./components/team/TeamPage.jsx";
 import InfoPage from "./components/info/InfoPage.jsx";
 import AboutPage from "./components/about/AboutPage.jsx";
+import SatelliteDataPage from "./components/satellite-data/SatelliteDataPage.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/team" component={TeamPage} />
           <Route path="/info" component={InfoPage} />
           <Route path="/about" component={AboutPage} />
+          <Route path="/satellite-data" component={SatelliteDataPage} />
           <Route exact path="/" component={HomePage} />
           <Route path="*" component={NoMatch} />
         </Switch>
