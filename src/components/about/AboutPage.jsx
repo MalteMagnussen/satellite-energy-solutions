@@ -12,7 +12,7 @@ const About = () => {
           <Col md={4}>
             <h1>About</h1>
           </Col>
-          <Col md={{ span: 6, offset: 0 }}>
+          <Col md={{ span: 6, offset: 0 }} style={{ textAlign: "justify" }}>
             We are a newly started startup with big plans. Coming from the
             renewable energy industry, the founding partners have seen that the
             common practice of calculating business cases for renewable energy
