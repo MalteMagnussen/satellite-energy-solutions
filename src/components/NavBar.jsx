@@ -18,14 +18,13 @@ const NavBar = () => {
             <NavDropdown.Item href="#/satellite-data">
               Access our Satellite Data
             </NavDropdown.Item>
-            <NavDropdown.Divider></NavDropdown.Divider>
             <NavDropdown.Item href="#action/3.2" disabled>
               Ready to use Electricity Price Projections
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3" disabled>
               Wind Turbine Production Forecasts
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.4" disabled>
+            <NavDropdown.Item href="#/maps">
               Screening Maps of Production
             </NavDropdown.Item>
           </NavDropdown>
