@@ -144,7 +144,13 @@ const MyFrontPageCardDeck = () => {
             </Card.Body>
           </Card>
           <Card>
-            <Card.Img variant="top" src={screeningMap} style={cardImageStyle} />
+            <a href="#/maps">
+              <Card.Img
+                variant="top"
+                src={screeningMap}
+                style={cardImageStyle}
+              />
+            </a>
             <Card.Body>
               <Card.Title>Screening maps of weather or production</Card.Title>
             </Card.Body>
