@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eef438bbab3ab542f2220aef62f2a504",
+    "revision": "c0af200b4129a1957ae9afb8360f40bd",
     "url": "/satellite-energy-solutions/index.html"
   },
   {
-    "revision": "7190f07f9a5a73c0cc70",
+    "revision": "fd96300f218662e33d18",
     "url": "/satellite-energy-solutions/static/css/2.b0bb7f2c.chunk.css"
   },
   {
-    "revision": "92822b62da2cb4cc5bcc",
+    "revision": "530a89ce27fd8c0d9a4f",
     "url": "/satellite-energy-solutions/static/css/main.d8006088.chunk.css"
   },
   {
-    "revision": "7190f07f9a5a73c0cc70",
-    "url": "/satellite-energy-solutions/static/js/2.6dc4ef7b.chunk.js"
+    "revision": "fd96300f218662e33d18",
+    "url": "/satellite-energy-solutions/static/js/2.c14535c8.chunk.js"
   },
   {
-    "revision": "92822b62da2cb4cc5bcc",
-    "url": "/satellite-energy-solutions/static/js/main.f65dde70.chunk.js"
+    "revision": "530a89ce27fd8c0d9a4f",
+    "url": "/satellite-energy-solutions/static/js/main.8ed91f91.chunk.js"
   },
   {
     "revision": "9dff4aad2f8da5f69f5a",
@@ -30,6 +30,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "1fcfd19c76fb9ec4aa1c437841964cf0",
     "url": "/satellite-energy-solutions/static/media/August.1fcfd19c.jpg"
+  },
+  {
+    "revision": "261e3942cef4494d27be9418004d7ae4",
+    "url": "/satellite-energy-solutions/static/media/EUAvg2018100m.261e3942.png"
+  },
+  {
+    "revision": "6a33783753670e4344e740fcba8c9280",
+    "url": "/satellite-energy-solutions/static/media/EUAvg2018150m.6a337837.png"
+  },
+  {
+    "revision": "68fd870f45f4bd6d18f57e3f634af425",
+    "url": "/satellite-energy-solutions/static/media/EUHourAvgV1642018100m.68fd870f.png"
   },
   {
     "revision": "10aad310309c9ee4630c452141ccf6d0",
