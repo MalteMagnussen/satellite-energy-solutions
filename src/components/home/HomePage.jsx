@@ -65,7 +65,7 @@ const Footer = () => {
 const WindTurbineCard = () => {
   return (
     <div>
-      <Card className="bg-dark text-white">
+      <Card border="light" className="bg-dark text-white">
         <Card.Img src={windTurbine} alt="Card image" />
         <Card.ImgOverlay style={{ marginTop: "130px", marginLeft: "30px" }}>
           <Card.Title>
