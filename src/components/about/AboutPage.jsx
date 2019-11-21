@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import FooterImage from "./img/footer.png";
+import FooterImage from "./img/about.jpg";
 import LinkButton from "../util/LinkButton.jsx";
 
 const About = () => {
@@ -40,7 +40,7 @@ const Footer = () => {
     <>
       <Card className="bg-dark text-white">
         <Card.Img src={FooterImage} alt="Card image" />
-        <Card.ImgOverlay style={{ marginTop: "130px", marginLeft: "30px" }}>
+        <Card.ImgOverlay style={{ marginTop: "30px", marginLeft: "30px" }}>
           <Card.Title>
             <h3>
               <b>Want to get involved?</b>
