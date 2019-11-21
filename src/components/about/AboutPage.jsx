@@ -6,24 +6,25 @@ import LinkButton from "../util/LinkButton.jsx";
 const About = () => {
   return (
     <>
-      <Container>
-        <br></br>
-        <Row>
-          <Col md={4}>
-            <h1>About</h1>
-          </Col>
-          <Col md={{ span: 6, offset: 0 }} style={{ textAlign: "justify" }}>
-            We are a newly started startup with big plans. Coming from the
-            renewable energy industry, the founding partners have seen that the
-            common practice of calculating business cases for renewable energy
-            projects could be improved. This online platform will provide a user
-            friendly way of accessing high resolution forecasting of prices and
-            production and retrieving raw data in one transparent platform.
-            Everything in a user friendly manner, available and useable for
-            Engineer and Economist alike.{" "}
-          </Col>
-        </Row>
-      </Container>
+      <br></br>
+      <Row>
+        <Col md={1}>
+          <h1 style={{ marginLeft: "50px" }}>About</h1>
+        </Col>
+        <Col
+          md={{ span: 5, offset: 5 }}
+          style={{ textAlign: "justify", marginRight: "80px" }}
+        >
+          We are a newly started startup with big plans. Coming from the
+          renewable energy industry, the founding partners have seen that the
+          common practice of calculating business cases for renewable energy
+          projects could be improved. This online platform will provide a user
+          friendly way of accessing high resolution forecasting of prices and
+          production and retrieving raw data in one transparent platform.
+          Everything in a user friendly manner, available and useable for
+          Engineer and Economist alike.{" "}
+        </Col>
+      </Row>
       <br />
       <br />
       <br />
