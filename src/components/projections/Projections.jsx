@@ -1,8 +1,19 @@
-import React from "react";
-import { Card, Nav, Row, Col, DropdownButton, Dropdown } from "react-bootstrap";
+import React, { useState } from "react";
+import {
+  Card,
+  Nav,
+  Row,
+  Col,
+  DropdownButton,
+  Dropdown,
+  Modal
+} from "react-bootstrap";
 import GB from "./imgs/GreatBritain.jpg";
 
 const Projections = () => {
+  const [modalShow, setModalShow] = useState(false);
+  const [countryName, setCountryName] = useState("");
+
   const myHeaderStyle = { marginLeft: "50px" };
   const MyBackgroundImage = {
     backgroundImage: "url(" + GB + ")",
@@ -20,17 +31,47 @@ const Projections = () => {
         <br />
         <Row>
           <Col>
-            <MyCard />
+            <MyCard
+              setModalShow={setModalShow}
+              setCountryName={setCountryName}
+            />
           </Col>
           <Col></Col>
           <Col></Col>
         </Row>
+        <MyModal
+          show={modalShow}
+          setModalShow={setModalShow}
+          countryName={countryName}
+        />
       </div>
     </>
   );
 };
 
-const MyCard = () => {
+const MyModal = ({ show, setModalShow, countryName }) => {
+  const onHide = () => setModalShow(false);
+  return (
+    <Modal
+      onHide={onHide}
+      show={show}
+      size="lg"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          {countryName}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <h4>[Insert table with data for {countryName}]</h4>
+      </Modal.Body>
+    </Modal>
+  );
+};
+
+const MyCard = ({ setModalShow, setCountryName }) => {
   const URL = "#/projections";
   return (
     <>
@@ -49,26 +90,43 @@ const MyCard = () => {
         </Card.Header>
         <Card.Body>
           <Card.Title>Search by country name</Card.Title>
-          <Card.Text>
-            <MyDropdown />
-          </Card.Text>
+          <MyDropdown
+            setModalShow={setModalShow}
+            setCountryName={setCountryName}
+          />
         </Card.Body>
       </Card>
     </>
   );
 };
 
-const MyDropdown = () => {
+// Countries with Data
+const countryNames = [
+  "France",
+  "Great Britain",
+  "Denmark",
+  "Sweden",
+  "Netherlands",
+  "Germany"
+];
+
+const MyDropdown = ({ setModalShow, setCountryName }) => {
   // France, Great Britain, Denmark, Sweden, Netherlands, Germany.
   return (
     <>
       <DropdownButton id="dropdown-item-button" title="Select Country">
-        <Dropdown.Item as="button">France</Dropdown.Item>
-        <Dropdown.Item as="button">Great Britain</Dropdown.Item>
-        <Dropdown.Item as="button">Denmark</Dropdown.Item>
-        <Dropdown.Item as="button">Sweden</Dropdown.Item>
-        <Dropdown.Item as="button">Netherlands</Dropdown.Item>
-        <Dropdown.Item as="button">Germany</Dropdown.Item>
+        {countryNames.map((name, index) => (
+          <Dropdown.Item
+            key={index}
+            as="button"
+            onClick={() => {
+              setModalShow(true);
+              setCountryName(name);
+            }}
+          >
+            {name}
+          </Dropdown.Item>
+        ))}
       </DropdownButton>
     </>
   );
