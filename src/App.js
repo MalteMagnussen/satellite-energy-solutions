@@ -7,6 +7,7 @@ import InfoPage from "./components/info/InfoPage.jsx";
 import AboutPage from "./components/about/AboutPage.jsx";
 import SatelliteDataPage from "./components/satellite-data/SatelliteDataPage.jsx";
 import Maps from "./components/maps/Maps.jsx";
+import Projections from "./components/projections/Projections.jsx";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" component={AboutPage} />
           <Route path="/satellite-data" component={SatelliteDataPage} />
           <Route path="/maps" component={Maps} />
+          <Route path="/projections" component={Projections} />
           <Route exact path="/" component={HomePage} />
           <Route path="*" component={NoMatch} />
         </Switch>

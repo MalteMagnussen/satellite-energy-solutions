@@ -6,7 +6,6 @@ import satellite from "./img/satellite.jpg";
 import power from "./img/power.jpg";
 import windTurbineBelow from "./img/windTurbineBelow.jpg";
 import screeningMap from "./img/ScreeningMap.png";
-import { Link } from "react-router-dom";
 
 const cardImageStyle = {
   height: "400px"
@@ -120,7 +119,9 @@ const MyFrontPageCardDeck = () => {
             </Card.Body>
           </Card>
           <Card>
-            <Card.Img variant="top" src={power} style={cardImageStyle} />
+            <a href="#/projections">
+              <Card.Img variant="top" src={power} style={cardImageStyle} />
+            </a>
             <Card.Body>
               <Card.Title>
                 Ready to use electricity price projections

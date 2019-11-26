@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { Carousel, Container } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import eu100m from "./weaterImages/EUAvg2018100m.png";
 import eu150m from "./weaterImages/EUAvg2018150m.png";
 import euHrAvg from "./weaterImages/EUHourAvgV1642018100m.png";
 
 const Maps = () => {
+  const headlineStyle = { marginLeft: "50px" };
   return (
     <>
-      <h2 style={{ marginLeft: "50px" }}>Result Examples</h2>
+      <h2 style={headlineStyle}>Result Examples</h2>
+      <h3 style={headlineStyle}>[Under Construction]</h3>
       <CopernicusCarousel />
     </>
   );

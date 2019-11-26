@@ -18,7 +18,7 @@ const NavBar = () => {
             <NavDropdown.Item href="#/satellite-data">
               Access our Satellite Data
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2" disabled>
+            <NavDropdown.Item href="#/projections">
               Ready to use Electricity Price Projections
             </NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3" disabled>
