@@ -6,7 +6,8 @@ import {
   Col,
   DropdownButton,
   Dropdown,
-  Modal
+  Modal,
+  Table
 } from "react-bootstrap";
 import GB from "./imgs/GreatBritain.jpg";
 import prices, { countryNames, years } from "./prices.jsx";
@@ -52,6 +53,8 @@ const Projections = () => {
 
 const MyModal = ({ show, setModalShow, countryName }) => {
   const onHide = () => setModalShow(false);
+  const trimmedName = countryName.replace(/\s/g, "");
+
   return (
     <Modal
       onHide={onHide}
@@ -66,9 +69,32 @@ const MyModal = ({ show, setModalShow, countryName }) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <h4>[Insert table with data for {countryName}]</h4>
+        <MyTable name={trimmedName} />
       </Modal.Body>
     </Modal>
+  );
+};
+
+const MyTable = ({ name }) => {
+  return (
+    <>
+      <Table>
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {years.map((year, index) => (
+            <tr key={index}>
+              <td>{year}</td>
+              <td>{prices[name][index]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </Table>
+    </>
   );
 };
 
