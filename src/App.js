@@ -8,6 +8,7 @@ import AboutPage from "./components/about/AboutPage.jsx";
 import SatelliteDataPage from "./components/satellite-data/SatelliteDataPage.jsx";
 import Maps from "./components/maps/Maps.jsx";
 import Projections from "./components/projections/Projections.jsx";
+import ScrollToTop from "./ScrollToTop.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <NavBar></NavBar>
       <br></br>
       <HashRouter>
+        <ScrollToTop />
         <Switch>
           <Route path="/team" component={TeamPage} />
           <Route path="/info" component={InfoPage} />
