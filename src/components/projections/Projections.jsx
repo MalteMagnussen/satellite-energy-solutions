@@ -9,6 +9,7 @@ import {
   Modal
 } from "react-bootstrap";
 import GB from "./imgs/GreatBritain.jpg";
+import prices, { countryNames, years } from "./prices.jsx";
 
 const Projections = () => {
   const [modalShow, setModalShow] = useState(false);
@@ -100,18 +101,7 @@ const MyCard = ({ setModalShow, setCountryName }) => {
   );
 };
 
-// Countries with Data
-const countryNames = [
-  "France",
-  "Great Britain",
-  "Denmark",
-  "Sweden",
-  "Netherlands",
-  "Germany"
-];
-
 const MyDropdown = ({ setModalShow, setCountryName }) => {
-  // France, Great Britain, Denmark, Sweden, Netherlands, Germany.
   return (
     <>
       <DropdownButton id="dropdown-item-button" title="Select Country">
