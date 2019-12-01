@@ -51,8 +51,7 @@ const Footer = () => {
             <br></br>
             If your interest is peaked, do not hesitate to take contact.
           </Card.Title>
-          {/* TODO UPDATE LINK HERE WHEN CONTACT PAGE IS DONE */}
-          <LinkButton variant="light" to="/info/problem" style={topSpace}>
+          <LinkButton variant="light" to="/team" style={topSpace}>
             <h4>Contact</h4>
           </LinkButton>
         </Card.Body>

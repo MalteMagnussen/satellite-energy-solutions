@@ -48,8 +48,7 @@ const Footer = () => {
             </h3>
           </Card.Title>
           <Card.Text>
-            {/* TODO UPDATE LINK HERE WHEN CONTACT PAGE IS DONE */}
-            <LinkButton variant="light" to="/info/problem" style={topSpace}>
+            <LinkButton variant="light" to="/team" style={topSpace}>
               <h4>Contact</h4>
             </LinkButton>
           </Card.Text>
