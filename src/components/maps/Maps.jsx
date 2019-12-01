@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Image } from "react-bootstrap";
 import eu100m from "./weaterImages/EUAvg2018100m.png";
 import eu150m from "./weaterImages/EUAvg2018150m.png";
 import euHrAvg from "./weaterImages/EUHourAvgV1642018100m.png";
@@ -10,7 +10,10 @@ const Maps = () => {
     <>
       <h2 style={headlineStyle}>Result Examples</h2>
       <h3 style={headlineStyle}>[Under Construction]</h3>
-      <CopernicusCarousel />
+      <Image src={eu100m} fluid />
+      <Image src={eu150m} fluid />
+      <Image src={euHrAvg} fluid />
+      {/* <CopernicusCarousel /> */}
     </>
   );
 };
