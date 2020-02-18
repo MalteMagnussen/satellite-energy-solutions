@@ -9,6 +9,8 @@ import SatelliteDataPage from "./components/satellite-data/SatelliteDataPage.jsx
 import Maps from "./components/maps/Maps.jsx";
 import Projections from "./components/projections/Projections.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
+import Collaborators from "./components/collaborators/Collaborators.jsx";
+import Media from "./components/media/Media.jsx";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/satellite-data" component={SatelliteDataPage} />
           <Route path="/maps" component={Maps} />
           <Route path="/projections" component={Projections} />
+          <Route path="/media" component={Media} />
+          <Route path="/collaborators" component={Collaborators} />
           <Route exact path="/" component={HomePage} />
           <Route path="*" component={NoMatch} />
         </Switch>
