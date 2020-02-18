@@ -7,7 +7,7 @@ const Collaborators = () => {
       <Container>
         <h1>Our Collaborators</h1>
         <br />
-        <h3>Accelerators we're a part of:</h3>
+        <h3>Accelerators we're a part of</h3>
         <Row>
           <Col>
             1 of 2

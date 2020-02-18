@@ -32,9 +32,13 @@ const TeamPage = () => {
           <h4 style={{ textAlign: "justify" }}>
             Satellite Energy Solutions is founded by a team of 3.
             <br />
-            Two engineers and a computer scientist. Our diverse background
-            covers: Energy system modelling, satellite big data management and
-            IT development.
+            Two engineers and a computer scientist.
+            <br /> Our diverse background covers: <br />
+            <ul>
+              <li>Energy system modelling</li>
+              <li>Satellite big data management</li>
+              <li>IT development</li>
+            </ul>
           </h4>
         </Col>
       </Row>
