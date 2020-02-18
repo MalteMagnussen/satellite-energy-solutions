@@ -31,7 +31,7 @@ const MyMedia = () => {
             <br />
             <FlyerMedia />
           </Col>
-          <Col sm={4}>
+          <Col sm={5}>
             <YouTubeVideo />
           </Col>
         </Row>
