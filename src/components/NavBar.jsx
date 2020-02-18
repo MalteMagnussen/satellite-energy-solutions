@@ -14,6 +14,8 @@ const NavBar = () => {
           <Nav.Link href="#/about">About</Nav.Link>
           <Nav.Link href="#/info/problem">Info</Nav.Link>
           <Nav.Link href="#/team">Team</Nav.Link>
+          <Nav.Link href="#/media">Media</Nav.Link>
+          <Nav.Link href="#/collaborators">Collaborators</Nav.Link>
           <NavDropdown title="Data" id="basic-nav-dropdown">
             <NavDropdown.Item href="#/satellite-data">
               Access our Satellite Data
