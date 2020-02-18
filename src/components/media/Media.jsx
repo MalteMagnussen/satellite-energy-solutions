@@ -23,13 +23,56 @@ const dimensions = 250; //64
 const MyMedia = () => {
   return (
     <>
-      <Container>
+      <div style={{ marginLeft: "50px" }}>
         <h1>Our Media</h1>
-        <PosterMedia />
+        <Row>
+          <Col sm={6}>
+            <PosterMedia />
+            <br />
+            <FlyerMedia />
+          </Col>
+          <Col sm={4}>
+            <YouTubeVideo />
+          </Col>
+        </Row>
         <br />
-        <FlyerMedia />
         <br />
-      </Container>
+        <br />
+        <br />
+      </div>
+    </>
+  );
+};
+
+const YouTubeVideo = () => {
+  return (
+    <>
+      <Card border="light">
+        <Card.Body>
+          <Card.Title>
+            <iframe
+              title="unique title property"
+              width="560"
+              height="315"
+              src="https://www.youtube-nocookie.com/embed/qSmpEQlhITY"
+              frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </Card.Title>
+          <Card.Text>
+            <h4>YouTube video application for innovationprice 2020</h4>
+          </Card.Text>
+          <Button
+            variant="primary"
+            href="https://www.via.dk/kampagner/innovationsprisen"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Innovationprice site
+          </Button>
+        </Card.Body>
+      </Card>
     </>
   );
 };
