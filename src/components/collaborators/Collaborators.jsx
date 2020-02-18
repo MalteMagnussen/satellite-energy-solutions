@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import CopernicusMissionPatch from "./presskit/MissionPatch19.png";
+import ParsecLogo from "./presskit/fb-opengraph.png";
 
 const Collaborators = () => {
   return (
@@ -32,7 +33,29 @@ const Collaborators = () => {
               <Card.Img variant="bottom" src={CopernicusMissionPatch} />
             </Card>
           </Col>
-          <Col>2 of 2</Col>
+          <Col>
+            <Card className="text-center">
+              <Card.Header>Our second accelerator</Card.Header>
+              <Card.Body>
+                <Card.Title>Parsec Accelerator</Card.Title>
+                <Card.Text>
+                  <ParsecText />
+                </Card.Text>
+                <Button
+                  variant="primary"
+                  href="https://parsec-accelerator.eu/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit their site
+                </Button>
+              </Card.Body>
+              <Card.Footer className="text-muted">
+                Joined in Winter 2020
+              </Card.Footer>
+              <Card.Img variant="bottom" src={ParsecLogo} />
+            </Card>
+          </Col>
         </Row>
       </Container>
     </>
@@ -52,6 +75,30 @@ const CopernicusText = () => {
       along with visualized data sets such as screening maps for wind speed or
       production.
     </p>
+  );
+};
+
+const ParsecText = () => {
+  return (
+    <>
+      <p>
+        The holistic two-stage acceleration programme will distribute a total of
+        €2.5 Million equity-free funding to 100 beneficiaries, alongside other
+        key resources (coaching, matchmaking, promotion) needed to develop and
+        launch 15 new products and services into the market. PARSEC will also
+        provide a suite of{" "}
+        <a
+          href="https://parsec-accelerator.eu/business-catalysts/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          business catalysts
+        </a>{" "}
+        for transforming data into market-ready services. The first Open Call
+        for applications was held between 20 September 2019 and 3 January 2020.
+        The second Open Call will be launched in spring 2020.
+      </p>
+    </>
   );
 };
 
