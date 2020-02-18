@@ -91,7 +91,7 @@ const Customer = () => {
 const Solution = () => {
   return (
     <>
-      <Card.Title>Special title treatment</Card.Title>
+      <Card.Title>Solution</Card.Title>
       <Card.Text>
         We will utilize COPERNICUS data to calculate future electricity prices
         using the energy model <a href="http://www.balmorel.com/">BALMOREL</a>.
