@@ -3,6 +3,8 @@ import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import CopernicusMissionPatch from "./presskit/MissionPatch19.png";
 import ParsecLogo from "./presskit/fb-opengraph.png";
 
+const align = { textAlign: "justify" };
+
 const Collaborators = () => {
   return (
     <>
@@ -64,7 +66,7 @@ const Collaborators = () => {
 
 const CopernicusText = () => {
   return (
-    <p>
+    <p style={align}>
       The Copernicus Accelerator prepares 50 of Europe’s boldest innovators for
       scalable success by creating a challenging, inspiring and supportive
       environment to learn and grow. The 12-month acceleration programme is
@@ -77,7 +79,7 @@ const CopernicusText = () => {
 const ParsecText = () => {
   return (
     <>
-      <p>
+      <p style={align}>
         The holistic two-stage acceleration programme will distribute a total of
         €2.5 Million equity-free funding to 100 beneficiaries, alongside other
         key resources (coaching, matchmaking, promotion) needed to develop and

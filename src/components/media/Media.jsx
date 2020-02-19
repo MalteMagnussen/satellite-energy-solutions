@@ -61,7 +61,7 @@ const YouTubeVideo = () => {
             ></iframe>
           </Card.Title>
           <Card.Text>
-            <h4>YouTube video application for innovationprice 2020</h4>
+            <h4>Application video for the Danish Innovation Price</h4>
           </Card.Text>
           <Button
             variant="primary"
@@ -69,7 +69,7 @@ const YouTubeVideo = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Innovationprice site
+            Innovation Price website
           </Button>
         </Card.Body>
       </Card>
