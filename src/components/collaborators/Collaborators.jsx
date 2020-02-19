@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import { Container, Row, Col, Card, Button, CardGroup } from "react-bootstrap";
 import CopernicusMissionPatch from "./presskit/MissionPatch19.png";
 import ParsecLogo from "./presskit/fb-opengraph.png";
 
@@ -13,51 +13,53 @@ const Collaborators = () => {
         <br />
         <h3>Accelerators we're a part of</h3>
         <Row>
-          <Col>
-            <Card className="text-center">
-              <Card.Header>Our first accelerator</Card.Header>
-              <Card.Body>
-                <Card.Title>Copernicus Accelerator</Card.Title>
-                <Card.Text>
-                  <CopernicusText />
-                </Card.Text>
-                <Button
-                  variant="primary"
-                  href="https://accelerator.copernicus.eu/"
-                  target="_blank"
-                >
-                  Visit their site
-                </Button>
-              </Card.Body>
-              <Card.Footer className="text-muted">
-                Joined in fall 2019
-              </Card.Footer>
-              <Card.Img variant="bottom" src={CopernicusMissionPatch} />
-            </Card>
-          </Col>
-          <Col>
-            <Card className="text-center">
-              <Card.Header>Our second accelerator</Card.Header>
-              <Card.Body>
-                <Card.Title>Parsec Accelerator</Card.Title>
-                <Card.Text>
-                  <ParsecText />
-                </Card.Text>
-                <Button
-                  variant="primary"
-                  href="https://parsec-accelerator.eu/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Visit their site
-                </Button>
-              </Card.Body>
-              <Card.Footer className="text-muted">
-                Joined in Winter 2020
-              </Card.Footer>
-              <Card.Img variant="bottom" src={ParsecLogo} />
-            </Card>
-          </Col>
+          <CardGroup>
+            <Col>
+              <Card className="text-center">
+                <Card.Header>Our first accelerator</Card.Header>
+                <Card.Body>
+                  <Card.Title>Copernicus Accelerator</Card.Title>
+                  <Card.Text>
+                    <CopernicusText />
+                  </Card.Text>
+                  <Button
+                    variant="primary"
+                    href="https://accelerator.copernicus.eu/"
+                    target="_blank"
+                  >
+                    Visit their site
+                  </Button>
+                </Card.Body>
+                <Card.Footer className="text-muted">
+                  Joined in fall 2019
+                </Card.Footer>
+                <Card.Img variant="bottom" src={CopernicusMissionPatch} />
+              </Card>
+            </Col>
+            <Col>
+              <Card className="text-center">
+                <Card.Header>Our second accelerator</Card.Header>
+                <Card.Body>
+                  <Card.Title>Parsec Accelerator</Card.Title>
+                  <Card.Text>
+                    <ParsecText />
+                  </Card.Text>
+                  <Button
+                    variant="primary"
+                    href="https://parsec-accelerator.eu/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Visit their site
+                  </Button>
+                </Card.Body>
+                <Card.Footer className="text-muted">
+                  Joined in Winter 2020
+                </Card.Footer>
+                <Card.Img variant="bottom" src={ParsecLogo} />
+              </Card>
+            </Col>
+          </CardGroup>
         </Row>
       </Container>
     </>
