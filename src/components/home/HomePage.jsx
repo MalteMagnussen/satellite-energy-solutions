@@ -134,11 +134,13 @@ const MyFrontPageCardDeck = () => {
       <Container>
         <CardDeck>
           <Card>
-            <Card.Img
-              variant="top"
-              src={windTurbineBelow}
-              style={cardImageStyle}
-            />
+            <a href="#/forecasts">
+              <Card.Img
+                variant="top"
+                src={windTurbineBelow}
+                style={cardImageStyle}
+              />
+            </a>
             <Card.Body>
               <Card.Title>Wind Turbine Production Forecasts</Card.Title>
             </Card.Body>
