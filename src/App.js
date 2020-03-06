@@ -11,6 +11,7 @@ import Projections from "./components/projections/Projections.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import Collaborators from "./components/collaborators/Collaborators.jsx";
 import Media from "./components/media/Media.jsx";
+import Forecasts from "./components/forecasts/Forecasts.jsx";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/projections" component={Projections} />
           <Route path="/media" component={Media} />
           <Route path="/collaborators" component={Collaborators} />
+          <Route path="/forecasts" component={Forecasts} />
           <Route exact path="/" component={HomePage} />
           <Route path="*" component={NoMatch} />
         </Switch>

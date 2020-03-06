@@ -23,7 +23,7 @@ const NavBar = () => {
             <NavDropdown.Item href="#/projections">
               Ready to use Electricity Price Projections
             </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3" disabled>
+            <NavDropdown.Item href="#/forecasts">
               Wind Turbine Production Forecasts
             </NavDropdown.Item>
             <NavDropdown.Item href="#/maps">
