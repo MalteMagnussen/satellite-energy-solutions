@@ -6,14 +6,10 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 
 const Forecasts = () => {
-  const [position, setPosition] = useState();
+  const [position, setPosition] = useState("Click map to show lat-lng");
   const handleClick = e => {
     setPosition(`You clicked:\nLat: ${e.latlng.lat}\nLng: ${e.latlng.lng}`);
   };
-
-  useEffect(() => {
-    setPosition("Click map to show lat-lng");
-  }, []);
 
   return (
     <>
