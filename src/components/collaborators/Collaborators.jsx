@@ -31,7 +31,7 @@ const Collaborators = () => {
                   </Button>
                 </Card.Body>
                 <Card.Footer className="text-muted">
-                  Joined in fall 2019
+                  Joined in Fall 2019
                 </Card.Footer>
                 <Card.Img variant="bottom" src={CopernicusMissionPatch} />
               </Card>
@@ -54,7 +54,7 @@ const Collaborators = () => {
                   </Button>
                 </Card.Body>
                 <Card.Footer className="text-muted">
-                  Joined in Winter 2020
+                  Joined in January 2020
                 </Card.Footer>
                 <Card.Img variant="bottom" src={ParsecLogo} />
               </Card>
