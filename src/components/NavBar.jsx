@@ -26,6 +26,9 @@ const NavBar = () => {
             <NavDropdown.Item href="#/forecasts">
               Wind Turbine Production Forecasts
             </NavDropdown.Item>
+            {/* <NavDropdown.Item href="#/googleforecasts">
+              Wind Turbine Production Forecasts - Google
+            </NavDropdown.Item> */}
             <NavDropdown.Item href="#/maps">
               Screening Maps of Production
             </NavDropdown.Item>

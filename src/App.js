@@ -11,7 +11,8 @@ import Projections from "./components/projections/Projections.jsx";
 import ScrollToTop from "./ScrollToTop.jsx";
 import Collaborators from "./components/collaborators/Collaborators.jsx";
 import Media from "./components/media/Media.jsx";
-import Forecasts from "./components/forecasts/Forecasts.jsx";
+import Forecasts from "./components/forecasts/LeafletForecasts.jsx";
+import ForecastsGoogle from "./components/forecasts/GoogleForecasts.jsx";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           <Route path="/media" component={Media} />
           <Route path="/collaborators" component={Collaborators} />
           <Route path="/forecasts" component={Forecasts} />
+          <Route path="/forecastsgoogle" component={ForecastsGoogle} />
           <Route exact path="/" component={HomePage} />
           <Route path="*" component={NoMatch} />
         </Switch>
