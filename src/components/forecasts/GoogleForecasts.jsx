@@ -1,9 +1,9 @@
 import React from "react";
-import { GoogleMap, useLoadScript } from "@react-google-maps/api";
+import { GoogleMap, withScriptjs, withGoogleMap } from "react-google-maps";
 
 const mapStyles = {
-  width: "100%",
-  height: "100%"
+  width: "90vw",
+  height: "90vh"
 };
 
 const getKey = () => {
@@ -20,42 +20,29 @@ const startCenter = {
   lng: 12.568337
 };
 
-const startZoom = 14;
+const startZoom = 10;
 
-const options = {
-  zoomControlOptions: {
-    position: google.maps.ControlPosition.RIGHT_CENTER // ,
-    // ...otherOptions
-  }
-};
+function Map() {
+  return (
+    <>
+      <GoogleMap defaultZoom={startZoom} defaultCenter={startCenter} />
+    </>
+  );
+}
 
-const Map = () => {
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: key // ,
-    // ...otherOptions
-  });
+const WrappedMap = withScriptjs(withGoogleMap(Map));
 
-  const renderMap = () => {
-    // wrapping to a function is useful in case you want to access `window.google`
-    // to eg. setup options or create latLng object, it won't be available otherwise
-    // feel free to render directly if you don't need that
-    const onLoad = React.useCallback(function onLoad(mapInstance) {
-      // do something with map Instance
-    });
-    return (
-      <GoogleMap options={options} onLoad={onLoad}>
-        {
-          // ...Your map components
-        }
-      </GoogleMap>
-    );
-  };
-
-  if (loadError) {
-    return <div>Map cannot be loaded right now, sorry.</div>;
-  }
-
-  return isLoaded ? renderMap() : <Spinner />;
-};
-
-export default Map;
+export default function myMap() {
+  return (
+    <>
+      <div style={mapStyles}>
+        <WrappedMap
+          googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${key}`}
+          loadingElement={<div style={mapStyles}></div>}
+          containerElement={<div style={mapStyles}></div>}
+          mapElement={<div style={mapStyles}></div>}
+        ></WrappedMap>
+      </div>
+    </>
+  );
+}
