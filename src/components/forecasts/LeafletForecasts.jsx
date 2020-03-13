@@ -43,6 +43,11 @@ const Forecasts = () => {
    * xl = extra large
    */
 
+  const fullScreenMapStyle = {
+    height: "100vh",
+    width: "100vw"
+  };
+
   return (
     <>
       <Container fluid>
@@ -62,7 +67,7 @@ const Forecasts = () => {
             <Map
               onClick={handleClick}
               {...mapOptions}
-              style={{ height: "80vh" }}
+              style={{ ...fullScreenMapStyle }}
             >
               <TileLayer
                 url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
