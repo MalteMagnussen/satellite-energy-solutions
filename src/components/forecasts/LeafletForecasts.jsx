@@ -50,8 +50,8 @@ const Forecasts = () => {
 
   return (
     <>
-      <Container fluid>
-        <Row
+      {/* <Container fluid> */}
+      {/* <Row
           className="justify-content-md-center"
           xs={2}
           sm={4}
@@ -63,31 +63,31 @@ const Forecasts = () => {
             Put Drop downs here
             <h4>{positionText}</h4>
           </Col>
-          <Col xs={2} md={2} lg={6} xl={8}>
-            <Map
-              onClick={handleClick}
-              {...mapOptions}
-              style={{ ...fullScreenMapStyle }}
-            >
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-              />
-              <Marker position={[lat, lng]}>
-                <Popup>
-                  Get Data about your Feasibility Study
-                  <br />
-                  This marker is placed at
-                  <br />
-                  Lat: {lat}
-                  <br />
-                  Long: {lng}
-                </Popup>
-              </Marker>
-            </Map>
-          </Col>
+          <Col xs={2} md={2} lg={6} xl={8}> */}
+      <Map
+        onClick={handleClick}
+        {...mapOptions}
+        style={{ ...fullScreenMapStyle }}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+        />
+        <Marker position={[lat, lng]}>
+          <Popup>
+            Get Data about your Feasibility Study
+            <br />
+            This marker is placed at
+            <br />
+            Lat: {lat}
+            <br />
+            Long: {lng}
+          </Popup>
+        </Marker>
+      </Map>
+      {/* </Col>
         </Row>
-      </Container>
+      </Container> */}
     </>
   );
 };
