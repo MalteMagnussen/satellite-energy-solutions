@@ -20,6 +20,7 @@ import {
 } from "react-leaflet";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
+import menuOptions from "./MenuOptions";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -61,28 +62,6 @@ const Forecasts = () => {
     />
   );
 
-  const Data = {
-    "Historical raw data": [
-      "Day ahead prices (land/zone,Eur/mwh,dato)",
-      "Generation levels",
-      "Installed capacity",
-      "Electricity demand",
-      "Environmental impact levels"
-    ],
-    "Long term forecasts": [
-      "Day ahead prices",
-      "Generation levels",
-      "Installed capacity",
-      "Electricity demand",
-      "Environmetal impact levels"
-    ],
-    "Wind related": [
-      "Wind capture prices",
-      "Wind capture price correlated to wind speeds",
-      "Turbine data"
-    ]
-  };
-
   return (
     <>
       <Container id="Card">
@@ -95,7 +74,7 @@ const Forecasts = () => {
           lng: {lng}
           <br />
           <Accordion>
-            {Object.entries(Data).map(([key, values], index) => (
+            {Object.entries(menuOptions).map(([key, values], index) => (
               <>
                 <Card>
                   <Card.Header>
@@ -142,34 +121,3 @@ const Forecasts = () => {
 };
 
 export default Forecasts;
-
-// const colRows = (
-// {/* <Container fluid> */}
-//       {/* <Row
-//           className="justify-content-md-center"
-//           xs={2}
-//           sm={4}
-//           md={6}
-//           lg={8}
-//           xl={10}
-//         >
-//           <Col xs={2} md={2} lg={2} xl={2}>
-//             Put Drop downs here
-//             <h4>{positionText}</h4>
-//           </Col>
-//           <Col xs={2} md={2} lg={6} xl={8}> */}
-//       {/* </Col>
-//         </Row>
-//       </Container> */}
-// )
-/**
- * Screen Sizes:
- * xs = extra small
- * sm = small
- * md = medium
- * lg = large
- * xl = extra large
- */
-
-const lorem =
-  "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.";
