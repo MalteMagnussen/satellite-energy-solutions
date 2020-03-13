@@ -30,7 +30,7 @@ const TeamPage = () => {
           <h1>Meet the team</h1>
           <br></br>
           <h4 style={{ textAlign: "justify" }}>
-            Satellite Energy Solutions is founded by a team of 3.
+            Tradewind is founded by a team of 3.
             <br />
             Two engineers and a computer scientist.
             <br /> Our diverse background covers: <br />

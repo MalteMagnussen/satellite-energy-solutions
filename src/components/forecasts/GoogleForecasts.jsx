@@ -10,7 +10,7 @@ const getKey = () => {
   if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "test")
     return process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
   else if (process.env.NODE_ENV === "production")
-    return "AIzaSyBr6ZNvfbeAgitXdDqV7qF5Q66IydKg1v8";
+    return "insert production key here";
 };
 
 const key = getKey();

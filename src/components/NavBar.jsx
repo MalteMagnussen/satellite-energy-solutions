@@ -5,7 +5,7 @@ const NavBar = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#/" style={{ marginLeft: "37px" }}>
-        Satellite Energy Solutions
+        Tradewind
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

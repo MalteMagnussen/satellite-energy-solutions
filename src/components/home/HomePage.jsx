@@ -15,8 +15,8 @@ const HomePage = () => {
   return (
     <>
       <h1 style={{ marginLeft: "50px" }}>
-        Satellite Energy Solutions supplies precise projections <br></br>and
-        data for your renewable business case
+        Tradewind supplies precise projections <br></br>and data for your
+        renewable business case
       </h1>
       <br></br>
       <br></br>
@@ -76,9 +76,9 @@ const WindTurbineCard = () => {
           </Card.Title>
           <Card.Text>
             <b>
-              Satellite Energy solutions provides precise electricity price, and
-              wind turbine productions forecasts as well as high resolution data
-              from 1985-2050.
+              Tradewind provides precise electricity price, and wind turbine
+              productions forecasts as well as high resolution data from
+              1985-2050.
             </b>
           </Card.Text>
         </Card.ImgOverlay>
