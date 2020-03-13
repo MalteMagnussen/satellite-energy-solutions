@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/satellite-energy-solutions/static/css/main.7c234985.chunk.css",
-    "main.js": "/satellite-energy-solutions/static/js/main.b030c8e0.chunk.js",
-    "main.js.map": "/satellite-energy-solutions/static/js/main.b030c8e0.chunk.js.map",
-    "runtime-main.js": "/satellite-energy-solutions/static/js/runtime-main.df827ca4.js",
-    "runtime-main.js.map": "/satellite-energy-solutions/static/js/runtime-main.df827ca4.js.map",
+    "main.css": "/satellite-energy-solutions/static/css/main.98e8c1eb.chunk.css",
+    "main.js": "/satellite-energy-solutions/static/js/main.278764bf.chunk.js",
+    "main.js.map": "/satellite-energy-solutions/static/js/main.278764bf.chunk.js.map",
+    "runtime-main.js": "/satellite-energy-solutions/static/js/runtime-main.c08305a4.js",
+    "runtime-main.js.map": "/satellite-energy-solutions/static/js/runtime-main.c08305a4.js.map",
     "static/css/2.2d487d2c.chunk.css": "/satellite-energy-solutions/static/css/2.2d487d2c.chunk.css",
-    "static/js/2.8d527a0e.chunk.js": "/satellite-energy-solutions/static/js/2.8d527a0e.chunk.js",
-    "static/js/2.8d527a0e.chunk.js.map": "/satellite-energy-solutions/static/js/2.8d527a0e.chunk.js.map",
+    "static/js/2.aac31f8b.chunk.js": "/satellite-energy-solutions/static/js/2.aac31f8b.chunk.js",
+    "static/js/2.aac31f8b.chunk.js.map": "/satellite-energy-solutions/static/js/2.aac31f8b.chunk.js.map",
     "index.html": "/satellite-energy-solutions/index.html",
-    "precache-manifest.3c5d69b8d73cc714372a921029f5dbf9.js": "/satellite-energy-solutions/precache-manifest.3c5d69b8d73cc714372a921029f5dbf9.js",
+    "precache-manifest.a89697fe7b12b1fbf264108f2b5b9083.js": "/satellite-energy-solutions/precache-manifest.a89697fe7b12b1fbf264108f2b5b9083.js",
     "service-worker.js": "/satellite-energy-solutions/service-worker.js",
     "static/css/2.2d487d2c.chunk.css.map": "/satellite-energy-solutions/static/css/2.2d487d2c.chunk.css.map",
-    "static/css/main.7c234985.chunk.css.map": "/satellite-energy-solutions/static/css/main.7c234985.chunk.css.map",
-    "static/js/2.8d527a0e.chunk.js.LICENSE.txt": "/satellite-energy-solutions/static/js/2.8d527a0e.chunk.js.LICENSE.txt",
+    "static/css/main.98e8c1eb.chunk.css.map": "/satellite-energy-solutions/static/css/main.98e8c1eb.chunk.css.map",
+    "static/js/2.aac31f8b.chunk.js.LICENSE.txt": "/satellite-energy-solutions/static/js/2.aac31f8b.chunk.js.LICENSE.txt",
     "static/media/Andreas.jpg": "/satellite-energy-solutions/static/media/Andreas.9437c17e.jpg",
     "static/media/August.jpg": "/satellite-energy-solutions/static/media/August.1fcfd19c.jpg",
     "static/media/EUAvg2018100m.png": "/satellite-energy-solutions/static/media/EUAvg2018100m.261e3942.png",
@@ -41,10 +41,10 @@
     "static/media/windTurbineBelow.jpg": "/satellite-energy-solutions/static/media/windTurbineBelow.27556bc4.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.df827ca4.js",
+    "static/js/runtime-main.c08305a4.js",
     "static/css/2.2d487d2c.chunk.css",
-    "static/js/2.8d527a0e.chunk.js",
-    "static/css/main.7c234985.chunk.css",
-    "static/js/main.b030c8e0.chunk.js"
+    "static/js/2.aac31f8b.chunk.js",
+    "static/css/main.98e8c1eb.chunk.css",
+    "static/js/main.278764bf.chunk.js"
   ]
 }
