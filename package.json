@@ -18,9 +18,9 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "ghpages": "gh-pages -d build",
     "mydeploy": "npm run build && gh-pages -d build",
-    "move": "npm run build && cd .. && python move.py && cd trade-wind.github.io && git add . && git commit -m 'Update' && git push",
+    "deploy": "npm run build && cd .. && python move.py && cd trade-wind.github.io && git add . && git commit -m 'Update' && git push",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
