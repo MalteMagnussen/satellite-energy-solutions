@@ -1,5 +1,13 @@
 import React from "react";
-import { Container, Row, Col, Card, Button, CardGroup } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Card,
+  Button,
+  CardGroup,
+  CardColumns
+} from "react-bootstrap";
 import CopernicusMissionPatch from "./presskit/MissionPatch19.png";
 // import ParsecLogo from "./presskit/fb-opengraph.png";
 import ParsecLogo from "./presskit/2 PARSEC Accelerator LOGO official blue.png";
@@ -7,7 +15,9 @@ import SkylabIgnitePhoto from "./presskit/skylab-ignite.PNG";
 
 const align = { textAlign: "justify" };
 
-const imageStyle = { height: 400 };
+const imageStyle = {
+  //  height: 400, width: "auto"
+};
 
 const Collaborators = () => {
   return (
@@ -15,73 +25,77 @@ const Collaborators = () => {
       <h1 className="text-center">Our Collaborators</h1>
       <br />
       <h3 className="text-center">Accelerators we're a part of</h3>
-      <CardGroup>
-        <Card className="text-center">
-          <Card.Body>
-            <Card.Title>Copernicus Accelerator</Card.Title>
-            <Card.Text>
-              <CopernicusText />
-            </Card.Text>
-            <Button
-              variant="primary"
-              href="https://accelerator.copernicus.eu/"
-              target="_blank"
-            >
-              Visit their site
-            </Button>
-          </Card.Body>
-          <Card.Footer className="text-muted">Joined in Fall 2019</Card.Footer>
-          <Card.Img
-            variant="bottom"
-            src={CopernicusMissionPatch}
-            style={imageStyle}
-          />
-        </Card>
-        <Card className="text-center">
-          <Card.Body>
-            <Card.Title>Parsec Accelerator</Card.Title>
-            <Card.Text>
-              <ParsecText />
-            </Card.Text>
-            <Button
-              variant="primary"
-              href="https://parsec-accelerator.eu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit their site
-            </Button>
-          </Card.Body>
-          <Card.Footer className="text-muted">
-            Joined in January 2020
-          </Card.Footer>
-          <Card.Img variant="bottom" style={imageStyle} src={ParsecLogo} />
-        </Card>
-        <Card className="text-center">
-          <Card.Body>
-            <Card.Title>Skylab Ignite</Card.Title>
-            <Card.Text>
-              <IgniteText />
-            </Card.Text>
-            <Button
-              variant="primary"
-              href="https://www.skylab.dtu.dk/programmes-and-services/skylab_ignite"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Visit their site
-            </Button>
-          </Card.Body>
-          <Card.Footer className="text-muted">
-            Joined in February 2020
-          </Card.Footer>
-          <Card.Img
-            style={imageStyle}
-            variant="bottom"
-            src={SkylabIgnitePhoto}
-          />
-        </Card>
-      </CardGroup>
+      <div style={{ margin: 20 }}>
+        <CardColumns>
+          <Card className="text-center">
+            <Card.Body>
+              <Card.Title>Copernicus Accelerator</Card.Title>
+              <Card.Text>
+                <CopernicusText />
+              </Card.Text>
+              <Button
+                variant="primary"
+                href="https://accelerator.copernicus.eu/"
+                target="_blank"
+              >
+                Visit their site
+              </Button>
+            </Card.Body>
+            <Card.Footer className="text-muted">
+              Joined in Fall 2019
+            </Card.Footer>
+            <Card.Img
+              variant="bottom"
+              src={CopernicusMissionPatch}
+              style={imageStyle}
+            />
+          </Card>
+          <Card className="text-center">
+            <Card.Body>
+              <Card.Title>Parsec Accelerator</Card.Title>
+              <Card.Text>
+                <ParsecText />
+              </Card.Text>
+              <Button
+                variant="primary"
+                href="https://parsec-accelerator.eu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit their site
+              </Button>
+            </Card.Body>
+            <Card.Footer className="text-muted">
+              Joined in January 2020
+            </Card.Footer>
+            <Card.Img variant="bottom" style={imageStyle} src={ParsecLogo} />
+          </Card>
+          <Card className="text-center">
+            <Card.Body>
+              <Card.Title>Skylab Ignite</Card.Title>
+              <Card.Text>
+                <IgniteText />
+              </Card.Text>
+              <Button
+                variant="primary"
+                href="https://www.skylab.dtu.dk/programmes-and-services/skylab_ignite"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit their site
+              </Button>
+            </Card.Body>
+            <Card.Footer className="text-muted">
+              Joined in February 2020
+            </Card.Footer>
+            <Card.Img
+              style={imageStyle}
+              variant="bottom"
+              src={SkylabIgnitePhoto}
+            />
+          </Card>
+        </CardColumns>
+      </div>
     </>
   );
 };
