@@ -7,7 +7,8 @@ import {
   Media,
   Modal,
   Image,
-  Carousel
+  Carousel,
+  CardColumns
 } from "react-bootstrap";
 import Flyer_page_001 from "./posters/Flyer-page-001.jpg";
 import Flyer_page_002 from "./posters/Flyer-page-002.jpg";
@@ -17,23 +18,45 @@ import Posters_page_002 from "./posters/Posters-page-002.jpg";
 import Posters_page_003 from "./posters/Posters-page-003.jpg";
 import Posters from "./posters/Posters.pdf";
 
-const dimensions = 250; //64
+const dimensions = { width: "60%", height: "60%" };
 
 const MyMedia = () => {
   return (
     <>
-      <div style={{ marginLeft: "50px" }}>
-        <h1>Our Media</h1>
-        <Row>
-          <Col sm={6}>
-            <PosterMedia />
-            <br />
-            <FlyerMedia />
-          </Col>
-          <Col sm={5}>
+      <div style={{ margin: 20 }}>
+        <h1 className="text-center">Our Media</h1>
+        <CardColumns>
+          <CustomMedia
+            flyers={[Flyer_page_001, Flyer_page_002]}
+            title="Our Flyers"
+            text={(() => (
+              <>
+                <p>Click photo to see slideshow.</p>
+                <p>
+                  Originally made for the opening of Digilabs at Skylabs DTU.
+                </p>
+              </>
+            ))()}
+            myDownload={Flyer}
+          />
+          <CustomMedia
+            flyers={[Posters_page_001, Posters_page_002, Posters_page_003]}
+            title="Our Posters"
+            text={(() => (
+              <>
+                <p>Click photo to see slideshow.</p>
+                <p>
+                  Originally made for the opening of Digilabs at Skylabs DTU.
+                </p>
+              </>
+            ))()}
+            myDownload={Posters}
+          />
+          <Card>
             <YouTubeVideo />
-          </Col>
-        </Row>
+          </Card>
+        </CardColumns>
+
         <br />
         <br />
         <br />
@@ -46,7 +69,7 @@ const MyMedia = () => {
 const YouTubeVideo = () => {
   return (
     <>
-      <Card border="light">
+      <Card className="text-center" border="light">
         <Card.Body>
           <Card.Title>
             <iframe
@@ -70,37 +93,46 @@ const YouTubeVideo = () => {
           >
             Innovation Price website
           </Button>
+          <br />
+          <small className="text-muted">We reached the semi-finals.</small>
         </Card.Body>
       </Card>
     </>
   );
 };
 
-const FlyerMedia = () => {
+const CustomMedia = ({ flyers, title, text, myDownload }) => {
   const [show, setShow] = useState(false);
-  const myFlyers = [Flyer_page_001, Flyer_page_002];
+  const myImages = { ...flyers };
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (
     <>
-      <Media>
-        <img
+      <Card className="text-center">
+        <Card.Img
+          variant="top"
           onClick={handleShow}
-          width={dimensions}
-          height={dimensions * 1.4}
+          style={dimensions}
           className="align-self-center mr-3"
-          src={Flyer_page_001}
+          src={myImages[0]}
           alt="Our Flyer Placeholder"
         />
-        <Media.Body>
-          <h5>Our Flyers</h5>
-          <p>Click photo to see slideshow.</p>
-          <p>Originally made for the opening of Digilabs at Skylabs DTU.</p>
-          <Button variant="primary" href={Flyer} download>
-            Download PDF.
-          </Button>
-        </Media.Body>
-      </Media>
+
+        <Card.Body>
+          <Card.Title>{title}</Card.Title>
+          <Card.Text>
+            {text}
+            <Button variant="primary" href={myDownload} download>
+              Download PDF.
+            </Button>
+          </Card.Text>
+          <Card.Text>
+            <small className="text-muted">
+              Was made before our name-change to Tradewind
+            </small>
+          </Card.Text>
+        </Card.Body>
+      </Card>
 
       <Modal
         size="lg"
@@ -110,47 +142,7 @@ const FlyerMedia = () => {
         onHide={handleClose}
         animation={false}
       >
-        <PosterCarousel images={myFlyers} />
-      </Modal>
-    </>
-  );
-};
-
-const PosterMedia = () => {
-  const [show, setShow] = useState(false);
-  const myPosters = [Posters_page_001, Posters_page_002, Posters_page_003];
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  return (
-    <>
-      <Media>
-        <img
-          onClick={handleShow}
-          width={dimensions}
-          height={dimensions * 1.4}
-          className="align-self-center mr-3"
-          src={Posters_page_001}
-          alt="Our Poster Placeholder"
-        />
-        <Media.Body>
-          <h5>Our Posters</h5>
-          <p>Click photo to see slideshow.</p>
-          <p>Originally made for the opening of Digilabs at Skylabs DTU.</p>
-          <Button variant="primary" href={Posters} download>
-            Download PDF.
-          </Button>
-        </Media.Body>
-      </Media>
-
-      <Modal
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-        show={show}
-        onHide={handleClose}
-        animation={false}
-      >
-        <PosterCarousel images={myPosters} />
+        <PosterCarousel images={myImages} />
       </Modal>
     </>
   );
