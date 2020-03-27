@@ -1,7 +1,8 @@
 import React from "react";
 import { Container, Row, Col, Card, Button, CardGroup } from "react-bootstrap";
 import CopernicusMissionPatch from "./presskit/MissionPatch19.png";
-import ParsecLogo from "./presskit/fb-opengraph.png";
+// import ParsecLogo from "./presskit/fb-opengraph.png";
+import ParsecLogo from "./presskit/2 PARSEC Accelerator LOGO official blue.png";
 
 const align = { textAlign: "justify" };
 
@@ -82,6 +83,10 @@ const ParsecText = () => {
   return (
     <>
       <p style={align}>
+        Tradewind has indirectly received funding from the European Union’s
+        Horizon 2020 research and innovation program, via an Open Call issued
+        and executed under project PARSEC (grant agreement No 824478)
+        <br></br>
         The holistic two-stage acceleration programme will distribute a total of
         €2.5 Million equity-free funding to 100 beneficiaries, alongside other
         key resources (coaching, matchmaking, promotion) needed to develop and
