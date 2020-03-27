@@ -1,22 +1,22 @@
 import React, { useState, useEffect } from "react";
 import {
   Container,
-  Row,
-  Col,
+  // Row,
+  // Col,
   Card,
   Button,
   ListGroup,
-  ListGroupItem,
+  // ListGroupItem,
   Accordion
 } from "react-bootstrap";
 import {
   Map,
   TileLayer,
   Marker,
-  Popup,
-  FeatureGroup,
-  Circle,
-  Rectangle
+  Popup
+  // FeatureGroup,
+  // Circle,
+  // Rectangle
 } from "react-leaflet";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
