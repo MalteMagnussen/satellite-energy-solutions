@@ -103,7 +103,7 @@ const YouTubeVideo = () => {
 
 const CustomMedia = ({ flyers, title, text, myDownload }) => {
   const [show, setShow] = useState(false);
-  const myImages = { ...flyers };
+  const myImages = [...flyers];
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   return (

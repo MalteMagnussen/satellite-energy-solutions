@@ -20,6 +20,7 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "mydeploy": "npm run build && gh-pages -d build",
+    "move": "npm run build && cd .. && python move.py",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
