@@ -13,14 +13,17 @@ import {
   Map,
   TileLayer,
   Marker,
-  Popup
+  Popup,
   // FeatureGroup,
   // Circle,
   // Rectangle
+  GeoJSON
 } from "react-leaflet";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
 import menuOptions from "./MenuOptions";
+import Sjaelland from "./biddingzones/sjaelland";
+import Jylland from "./biddingzones/jylland";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -59,6 +62,9 @@ const Forecasts = () => {
       attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
     />
   );
+
+  const SjaellandGeoJson = <GeoJSON data={Sjaelland} />;
+  const JyllandGeoJson = <GeoJSON data={Jylland} />;
 
   return (
     <>
@@ -99,9 +105,14 @@ const Forecasts = () => {
           </Accordion>
         </Card>
       </Container>
+
       <Map id="MyMap" onClick={handleClick} {...mapOptions}>
         {Credits}
         {SatelliteImagery}
+        {/* BIDDING ZONES START */}
+        {SjaellandGeoJson}
+        {JyllandGeoJson}
+        {/* BIDDING ZONES END */}
         <Marker position={[lat, lng]}>
           <Popup>
             Get Data about your Feasibility Study
