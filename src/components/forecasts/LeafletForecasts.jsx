@@ -7,7 +7,8 @@ import {
   Button,
   ListGroup,
   // ListGroupItem,
-  Accordion
+  Accordion,
+  ToggleButtonGroup
 } from "react-bootstrap";
 import {
   Map,
@@ -30,6 +31,8 @@ const Forecasts = () => {
   const startLocation = [56.25798302076854, 10.667724609375002];
   const [lat, setLat] = useState(startLocation[0]);
   const [lng, setLng] = useState(startLocation[1]);
+  const [feature, setFeature] = useState("zones");
+  const [zone, setZone] = useState();
   const handleClick = e => {
     setLat(e.latlng.lat);
     setLng(e.latlng.lng);
@@ -38,6 +41,7 @@ const Forecasts = () => {
     center: [...startLocation],
     zoom: 7
   };
+  const handleChange = val => setFeature(val);
 
   useEffect(() => {
     // The following is magic, to allow Marker to work. From: https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-541142178
@@ -63,24 +67,94 @@ const Forecasts = () => {
     />
   );
 
-  const SjaellandGeoJson = <GeoJSON data={Sjaelland} />;
-  const JyllandGeoJson = <GeoJSON data={Jylland} />;
+  const MyMapFeatures = () => {
+    const ZoneFeature = {
+      SjaellandGeoJson: (
+        <>
+          <GeoJSON onClick={() => setZone("Sjælland")} data={Sjaelland} />
+        </>
+      ),
+      JyllandGeoJson: (
+        <>
+          <GeoJSON onClick={() => setZone("Jylland")} data={Jylland} />
+        </>
+      )
+    };
+    if (feature === "zones") {
+      return (
+        <>
+          {ZoneFeature.JyllandGeoJson}
+          {ZoneFeature.SjaellandGeoJson}
+        </>
+      );
+    } else if (feature === "point") {
+      return (
+        <>
+          <Marker position={[lat, lng]}>
+            <Popup>
+              Get Data about your Feasibility Study
+              <br />
+              This marker is placed at
+              <br />
+              Lat: {lat}
+              <br />
+              Long: {lng}
+            </Popup>
+          </Marker>
+        </>
+      );
+    } else {
+      return null;
+    }
+  };
+
+  const TextFeature = () => {
+    if (feature === "zones") {
+      return (
+        <>
+          <div className="text-center">
+            <h5>Zones</h5>Select a Zone to see more information. <br /> Zone
+            Selected: {zone}
+          </div>
+        </>
+      );
+    } else if (feature === "point") {
+      return (
+        <>
+          <div className="text-center">
+            <h5>Point</h5>
+            Marker is currently placed at:
+            <br />
+            lat: {lat}
+            <br />
+            lng: {lng}
+          </div>
+        </>
+      );
+    } else {
+      return null;
+    }
+  };
 
   return (
     <>
       <Container id="Card">
-        <Card className="text-center">
-          <h5>Point</h5>
-          Marker is currently placed at:
+        <Card>
+          <Button variant="light" onClick={() => handleChange("point")}>
+            Point Feature
+          </Button>
+          <Button variant="light" onClick={() => handleChange("zones")}>
+            Bidding Zone Feature
+          </Button>
           <br />
-          lat: {lat}
+          <TextFeature />
           <br />
-          lng: {lng}
           <br />
+
           <Accordion>
             {Object.entries(menuOptions).map(([key, values], index) => (
-              <>
-                <Card>
+              <React.Fragment key={index}>
+                <Card className="text-center">
                   <Card.Header>
                     <Accordion.Toggle
                       as={Button}
@@ -93,37 +167,25 @@ const Forecasts = () => {
                   <Accordion.Collapse eventKey={index.toString()}>
                     <Card.Body>
                       <ListGroup variant="flush">
-                        {values.map(value => (
-                          <ListGroup.Item>{value}</ListGroup.Item>
+                        {values.map((value, index) => (
+                          <ListGroup.Item key={index}>{value}</ListGroup.Item>
                         ))}
                       </ListGroup>
                     </Card.Body>
                   </Accordion.Collapse>
                 </Card>
-              </>
+              </React.Fragment>
             ))}
           </Accordion>
+          <br />
+          <br />
         </Card>
       </Container>
 
       <Map id="MyMap" onClick={handleClick} {...mapOptions}>
-        {Credits}
+        {Credits} {/* Always need credits */}
         {SatelliteImagery}
-        {/* BIDDING ZONES START */}
-        {SjaellandGeoJson}
-        {JyllandGeoJson}
-        {/* BIDDING ZONES END */}
-        <Marker position={[lat, lng]}>
-          <Popup>
-            Get Data about your Feasibility Study
-            <br />
-            This marker is placed at
-            <br />
-            Lat: {lat}
-            <br />
-            Long: {lng}
-          </Popup>
-        </Marker>
+        <MyMapFeatures />
       </Map>
     </>
   );
