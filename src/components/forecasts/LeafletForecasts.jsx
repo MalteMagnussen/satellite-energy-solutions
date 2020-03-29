@@ -200,8 +200,6 @@ const Forecasts = () => {
               </React.Fragment>
             ))}
           </Accordion>
-          <br />
-          <br />
         </Card>
       </Container>
 
