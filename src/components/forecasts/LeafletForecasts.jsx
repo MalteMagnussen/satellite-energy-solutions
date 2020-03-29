@@ -25,6 +25,7 @@ import "leaflet/dist/leaflet.css";
 import menuOptions from "./MenuOptions";
 import Sjaelland from "./biddingzones/sjaelland";
 import Jylland from "./biddingzones/jylland";
+import Sverige from "./biddingzones/sverige";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -39,7 +40,7 @@ const Forecasts = () => {
   };
   const mapOptions = {
     center: [...startLocation],
-    zoom: 7
+    zoom: 6
   };
   const handleChange = val => setFeature(val);
 
@@ -71,12 +72,33 @@ const Forecasts = () => {
     const ZoneFeature = {
       SjaellandGeoJson: (
         <>
-          <GeoJSON onClick={() => setZone("Sjælland")} data={Sjaelland} />
+          <GeoJSON
+            onClick={() => setZone(Sjaelland.properties.name)}
+            data={Sjaelland}
+          />
         </>
       ),
       JyllandGeoJson: (
         <>
-          <GeoJSON onClick={() => setZone("Jylland")} data={Jylland} />
+          <GeoJSON
+            onClick={() => setZone(Jylland.properties.name)}
+            data={Jylland}
+          />
+        </>
+      ),
+      SverigeGeoJson: (
+        <>
+          {Sverige.map((area, index) => (
+            <React.Fragment key={index}>
+              <GeoJSON
+                onClick={() => setZone(area.properties.name)}
+                data={area}
+              />
+              <Marker position={area.properties.center}>
+                <Popup>{area.properties.name}</Popup>
+              </Marker>
+            </React.Fragment>
+          ))}
         </>
       )
     };
@@ -85,6 +107,7 @@ const Forecasts = () => {
         <>
           {ZoneFeature.JyllandGeoJson}
           {ZoneFeature.SjaellandGeoJson}
+          {ZoneFeature.SverigeGeoJson}
         </>
       );
     } else if (feature === "point") {

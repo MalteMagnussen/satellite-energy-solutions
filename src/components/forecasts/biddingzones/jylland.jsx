@@ -1,6 +1,7 @@
 const jylland = {
   type: "FeatureCollection",
-  name: "Jylland",
+  properties: { name: "Jylland" },
+
   features: [
     {
       type: "Feature",
