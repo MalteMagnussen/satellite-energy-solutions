@@ -1,6 +1,6 @@
 const Sjaelland = {
   type: "FeatureCollection",
-  properties: { name: "Sjælland" },
+  properties: { name: "DK2" },
 
   features: [
     {
