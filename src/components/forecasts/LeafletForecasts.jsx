@@ -7,8 +7,8 @@ import {
   Button,
   ListGroup,
   // ListGroupItem,
-  Accordion,
-  ToggleButtonGroup
+  Accordion
+  // ToggleButtonGroup
 } from "react-bootstrap";
 import {
   Map,

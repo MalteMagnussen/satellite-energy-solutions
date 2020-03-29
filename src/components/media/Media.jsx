@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import {
-  Row,
-  Col,
+  // Row,
+  // Col,
   Card,
   Button,
-  Media,
+  // Media,
   Modal,
   Image,
   Carousel,
