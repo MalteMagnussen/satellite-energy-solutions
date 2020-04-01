@@ -26,6 +26,7 @@ import menuOptions from "./MenuOptions";
 import Sjaelland from "./biddingzones/sjaelland";
 import Jylland from "./biddingzones/jylland";
 import Sverige from "./biddingzones/sverige";
+import Norway from "./biddingzones/norway";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -69,45 +70,33 @@ const Forecasts = () => {
   );
 
   const MyMapFeatures = () => {
-    const ZoneFeature = {
-      SjaellandGeoJson: (
-        <>
-          <GeoJSON
-            onClick={() => setZone(Sjaelland.properties.name)}
-            data={Sjaelland}
-          />
-        </>
-      ),
-      JyllandGeoJson: (
-        <>
-          <GeoJSON
-            onClick={() => setZone(Jylland.properties.name)}
-            data={Jylland}
-          />
-        </>
-      ),
-      SverigeGeoJson: (
-        <>
-          {Sverige.map((area, index) => (
-            <React.Fragment key={index}>
-              <GeoJSON
-                onClick={() => setZone(area.properties.name)}
-                data={area}
-              />
-              <Marker position={area.properties.center}>
-                <Popup>{area.properties.name}</Popup>
-              </Marker>
-            </React.Fragment>
-          ))}
-        </>
-      )
-    };
+    const areas = [Norway, Sjaelland, Jylland];
+    const SverigeFeature = (
+      <>
+        {Sverige.map((area, index) => (
+          <React.Fragment key={index}>
+            <GeoJSON
+              onClick={() => setZone(area.properties.name)}
+              data={area}
+            />
+            <Marker position={area.properties.center}>
+              <Popup>{area.properties.name}</Popup>
+            </Marker>
+          </React.Fragment>
+        ))}
+      </>
+    );
+
     if (feature === "zones") {
       return (
         <>
-          {ZoneFeature.JyllandGeoJson}
-          {ZoneFeature.SjaellandGeoJson}
-          {ZoneFeature.SverigeGeoJson}
+          {areas.map(area => (
+            <GeoJSON
+              onClick={() => setZone(area.properties.name)}
+              data={area}
+            />
+          ))}
+          {SverigeFeature}
         </>
       );
     } else if (feature === "point") {
