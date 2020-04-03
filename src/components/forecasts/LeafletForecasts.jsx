@@ -74,7 +74,7 @@ const Forecasts = () => {
     const areas = [Norway, Sjaelland, Jylland];
     const EuropeFeature = (
       <>
-        {Europe.map(area => (
+        {Europe.features.map(area => (
           <React.Fragment key={area.id}>
             <GeoJSON
               onClick={() => setZone(area.properties.NAME_ENGL)}
