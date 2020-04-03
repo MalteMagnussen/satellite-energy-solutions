@@ -27,6 +27,7 @@ import Sjaelland from "./biddingzones/sjaelland";
 import Jylland from "./biddingzones/jylland";
 import Sverige from "./biddingzones/sverige";
 import Norway from "./biddingzones/norway";
+import Europe from "./biddingzones/europe";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -71,6 +72,18 @@ const Forecasts = () => {
 
   const MyMapFeatures = () => {
     const areas = [Norway, Sjaelland, Jylland];
+    const EuropeFeature = (
+      <>
+        {Europe.map(area => (
+          <React.Fragment key={area.id}>
+            <GeoJSON
+              onClick={() => setZone(area.properties.NAME_ENGL)}
+              data={area}
+            />
+          </React.Fragment>
+        ))}
+      </>
+    );
     const SverigeFeature = (
       <>
         {Sverige.map((area, index) => (
@@ -79,9 +92,6 @@ const Forecasts = () => {
               onClick={() => setZone(area.properties.name)}
               data={area}
             />
-            <Marker position={area.properties.center}>
-              <Popup>{area.properties.name}</Popup>
-            </Marker>
           </React.Fragment>
         ))}
       </>
@@ -97,6 +107,7 @@ const Forecasts = () => {
             />
           ))}
           {SverigeFeature}
+          {EuropeFeature}
         </>
       );
     } else if (feature === "point") {
