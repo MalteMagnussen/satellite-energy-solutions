@@ -4,6 +4,7 @@ import MalteImg from "./img/Malte.png";
 import AugustImg from "./img/August.jpg";
 import AndreasImg from "./img/Andreas.jpg";
 import teamImg from "./img/team.jpeg";
+import Collaborators from "../collaborators/Collaborators";
 
 const TeamPage = () => {
   return (
@@ -20,33 +21,38 @@ const TeamPage = () => {
       <br />
       <br />
       <br />
-      <br />
-      <br />
-      <Row>
-        <Col md={{ span: 6 }} style={{ marginLeft: "30px" }}>
-          <Image fluid src={teamImg} />
-        </Col>
-        <Col md={{ span: 5 }}>
-          <h1>Meet the team</h1>
-          <br></br>
-          <h4 style={{ textAlign: "justify" }}>
-            Tradewind is founded by a team of 3.
-            <br />
-            Two engineers and a computer scientist.
-            <br /> Our diverse background covers: <br />
-            <ul>
-              <li>Energy system modelling</li>
-              <li>Satellite big data management</li>
-              <li>IT development</li>
-            </ul>
-          </h4>
-        </Col>
-      </Row>
+      <MeetTheTeam />
       <br />
       <br />
       <br />
       <br />
+      <Collaborators />
     </>
+  );
+};
+
+const MeetTheTeam = () => {
+  return (
+    <Row>
+      <Col md={{ span: 6 }} style={{ marginLeft: "30px" }}>
+        <Image fluid src={teamImg} />
+      </Col>
+      <Col md={{ span: 5 }}>
+        <h1>Meet the team</h1>
+        <br></br>
+        <h4 style={{ textAlign: "justify" }}>
+          Tradewind is founded by a team of 3.
+          <br />
+          Two engineers and a computer scientist.
+          <br /> Our diverse background covers: <br />
+          <ul>
+            <li>Energy system modelling</li>
+            <li>Satellite big data management</li>
+            <li>IT development</li>
+          </ul>
+        </h4>
+      </Col>
+    </Row>
   );
 };
 
