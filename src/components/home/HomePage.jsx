@@ -8,7 +8,7 @@ import windTurbineBelow from "./img/windTurbineBelow.jpg";
 import screeningMap from "./img/ScreeningMap.png";
 
 const cardImageStyle = {
-  height: "400px"
+  height: "400px",
 };
 
 const HomePage = () => {
@@ -37,7 +37,7 @@ const HomePage = () => {
 
 const Footer = () => {
   const topSpace = {
-    marginTop: "50px"
+    marginTop: "50px",
   };
   return (
     <>
@@ -110,17 +110,17 @@ const MyFrontPageCardDeck = () => {
       <Container>
         <CardDeck>
           <Card>
-            <a href="#/satellite-data">
-              <Card.Img variant="top" src={satellite} style={cardImageStyle} />
-            </a>
+            {/* <a href="#/satellite-data"> */}
+            <Card.Img variant="top" src={satellite} style={cardImageStyle} />
+            {/* </a> */}
             <Card.Body>
               <Card.Title>Access our satellite data and more</Card.Title>
             </Card.Body>
           </Card>
           <Card>
-            <a href="#/projections">
-              <Card.Img variant="top" src={power} style={cardImageStyle} />
-            </a>
+            {/* <a href="#/projections"> */}
+            <Card.Img variant="top" src={power} style={cardImageStyle} />
+            {/* </a> */}
             <Card.Body>
               <Card.Title>
                 Ready to use electricity price projections
@@ -134,25 +134,21 @@ const MyFrontPageCardDeck = () => {
       <Container>
         <CardDeck>
           <Card>
-            <a href="#/forecasts">
-              <Card.Img
-                variant="top"
-                src={windTurbineBelow}
-                style={cardImageStyle}
-              />
-            </a>
+            {/* <a href="#/forecasts"> */}
+            <Card.Img
+              variant="top"
+              src={windTurbineBelow}
+              style={cardImageStyle}
+            />
+            {/* </a> */}
             <Card.Body>
               <Card.Title>Wind Turbine Production Forecasts</Card.Title>
             </Card.Body>
           </Card>
           <Card>
-            <a href="#/maps">
-              <Card.Img
-                variant="top"
-                src={screeningMap}
-                style={cardImageStyle}
-              />
-            </a>
+            {/* <a href="#/maps"> */}
+            <Card.Img variant="top" src={screeningMap} style={cardImageStyle} />
+            {/* </a> */}
             <Card.Body>
               <Card.Title>Screening maps of weather or production</Card.Title>
             </Card.Body>
