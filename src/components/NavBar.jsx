@@ -3,8 +3,9 @@ import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const NavBar = () => {
   const [selectedNavItem, setSelectedNavItem] = useState("#/");
+  // style={{ backgroundColor: "#D5F5E3" }}
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg">
       <Navbar.Brand
         onClick={() => setSelectedNavItem("#/")}
         href="#/"
