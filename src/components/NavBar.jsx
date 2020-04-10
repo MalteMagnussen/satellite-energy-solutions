@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 const NavBar = () => {
+  const [selectedNavItem, setSelectedNavItem] = useState("#/");
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#/" style={{ marginLeft: "37px" }}>
@@ -9,7 +10,12 @@ const NavBar = () => {
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav
+          className="mr-auto"
+          activeKey={selectedNavItem}
+          onSelect={(selectedKey) => setSelectedNavItem(selectedKey)}
+          defaultActiveKey="#/"
+        >
           <Nav.Link href="#/">Work</Nav.Link>
           <Nav.Link href="#/forecasts">Forecasting</Nav.Link>
           {/* <Nav.Link href="#/about">About</Nav.Link> */}
