@@ -5,7 +5,11 @@ const NavBar = () => {
   const [selectedNavItem, setSelectedNavItem] = useState("#/");
   return (
     <Navbar bg="light" expand="lg">
-      <Navbar.Brand href="#/" style={{ marginLeft: "37px" }}>
+      <Navbar.Brand
+        onClick={() => setSelectedNavItem("#/")}
+        href="#/"
+        style={{ marginLeft: "37px" }}
+      >
         Tradewind
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -16,7 +20,7 @@ const NavBar = () => {
           onSelect={(selectedKey) => setSelectedNavItem(selectedKey)}
           defaultActiveKey="#/"
         >
-          <Nav.Link href="#/">Work</Nav.Link>
+          {/* <Nav.Link href="#/">Work</Nav.Link> */}
           <Nav.Link href="#/forecasts">Forecasting</Nav.Link>
           {/* <Nav.Link href="#/about">About</Nav.Link> */}
           {/* <Nav.Link href="#/info/problem">Info</Nav.Link> */}
