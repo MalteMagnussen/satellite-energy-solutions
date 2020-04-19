@@ -7,7 +7,7 @@ import {
   Button,
   ListGroup,
   // ListGroupItem,
-  Accordion
+  Accordion,
   // ToggleButtonGroup
 } from "react-bootstrap";
 import {
@@ -18,7 +18,7 @@ import {
   // FeatureGroup,
   // Circle,
   // Rectangle
-  GeoJSON
+  GeoJSON,
 } from "react-leaflet";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
@@ -31,20 +31,20 @@ import Europe from "./biddingzones/europe";
 const L = require("leaflet");
 
 const Forecasts = () => {
-  const startLocation = [56.25798302076854, 10.667724609375002];
+  const startLocation = [57.42630884997942, -1.7578125000000002];
   const [lat, setLat] = useState(startLocation[0]);
   const [lng, setLng] = useState(startLocation[1]);
   const [feature, setFeature] = useState("zones");
   const [zone, setZone] = useState();
-  const handleClick = e => {
+  const handleClick = (e) => {
     setLat(e.latlng.lat);
     setLng(e.latlng.lng);
   };
   const mapOptions = {
     center: [...startLocation],
-    zoom: 6
+    zoom: 4,
   };
-  const handleChange = val => setFeature(val);
+  const handleChange = (val) => setFeature(val);
 
   useEffect(() => {
     // The following is magic, to allow Marker to work. From: https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-541142178
@@ -52,7 +52,7 @@ const Forecasts = () => {
     L.Icon.Default.mergeOptions({
       iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png"),
       iconUrl: require("leaflet/dist/images/marker-icon.png"),
-      shadowUrl: require("leaflet/dist/images/marker-shadow.png")
+      shadowUrl: require("leaflet/dist/images/marker-shadow.png"),
     });
   }, []);
 
@@ -74,7 +74,7 @@ const Forecasts = () => {
     const areas = [Norway, Sjaelland, Jylland];
     const EuropeFeature = (
       <>
-        {Europe.features.map(area => (
+        {Europe.features.map((area) => (
           <React.Fragment key={area.id}>
             <GeoJSON
               onClick={() => setZone(area.properties.NAME_ENGL)}
@@ -100,7 +100,7 @@ const Forecasts = () => {
     if (feature === "zones") {
       return (
         <>
-          {areas.map(area => (
+          {areas.map((area) => (
             <GeoJSON
               onClick={() => setZone(area.properties.name)}
               data={area}
