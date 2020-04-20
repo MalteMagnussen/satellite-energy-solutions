@@ -44,8 +44,8 @@ const Forecasts = () => {
     center: [...startLocation],
     zoom: 4,
   };
-  const handleChange = (val) => setFeature(val);
 
+  // This useEffect runs once when page loads.
   useEffect(() => {
     // The following is magic, to allow Marker to work. From: https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-541142178
     delete L.Icon.Default.prototype._getIconUrl;
@@ -56,6 +56,82 @@ const Forecasts = () => {
     });
   }, []);
 
+  // The Card at the left side of the Map "Forecasting" view.
+  const MenuOptions = () => {
+    const handleChange = (val) => setFeature(val);
+
+    // This is the top Feature of the card.
+    const TextFeature = () => {
+      if (feature === "zones") {
+        return (
+          <>
+            <div className="text-center">
+              <h5>Zones</h5>Select a Zone to see more information. <br /> Zone
+              Selected: {zone}
+            </div>
+          </>
+        );
+      } else if (feature === "point") {
+        return (
+          <>
+            <div className="text-center">
+              <h5>Point</h5>
+              Marker is currently placed at:
+              <br />
+              lat: {lat}
+              <br />
+              lng: {lng}
+            </div>
+          </>
+        );
+      } else {
+        return null;
+      }
+    };
+
+    return (
+      <Container id="Card">
+        <Card>
+          <Button variant="light" onClick={() => handleChange("point")}>
+            Point Feature
+          </Button>
+          <Button variant="light" onClick={() => handleChange("zones")}>
+            Bidding Zones
+          </Button>
+          <br />
+          <TextFeature />
+          <br />
+
+          <Accordion>
+            <Card className="text-center">
+              <Card.Header>
+                <Accordion.Toggle
+                  as={Button}
+                  variant="link"
+                  eventKey={"Credits"}
+                >
+                  Credits
+                </Accordion.Toggle>
+              </Card.Header>
+              <Accordion.Collapse eventKey={"Credits"}>
+                <Card.Body>
+                  <ListGroup variant="flush">
+                    EN: © EuroGeographics for the administrative boundaries
+                    <br />
+                    FR: © EuroGeographics pour les limites administratives
+                    <br />
+                    DE: © EuroGeographics bezüglich der Verwaltungsgrenzen
+                  </ListGroup>
+                </Card.Body>
+              </Accordion.Collapse>
+            </Card>
+          </Accordion>
+        </Card>
+      </Container>
+    );
+  };
+
+  // The Point and Bidding Zone features.
   const MyMapFeatures = () => {
     const areas = [Norway, Sjaelland, Jylland];
     const EuropeFeature = (
@@ -117,77 +193,9 @@ const Forecasts = () => {
     }
   };
 
-  const TextFeature = () => {
-    if (feature === "zones") {
-      return (
-        <>
-          <div className="text-center">
-            <h5>Zones</h5>Select a Zone to see more information. <br /> Zone
-            Selected: {zone}
-          </div>
-        </>
-      );
-    } else if (feature === "point") {
-      return (
-        <>
-          <div className="text-center">
-            <h5>Point</h5>
-            Marker is currently placed at:
-            <br />
-            lat: {lat}
-            <br />
-            lng: {lng}
-          </div>
-        </>
-      );
-    } else {
-      return null;
-    }
-  };
-
   return (
     <>
-      <Container id="Card">
-        <Card>
-          <Button variant="light" onClick={() => handleChange("point")}>
-            Point Feature
-          </Button>
-          <Button variant="light" onClick={() => handleChange("zones")}>
-            Bidding Zone Feature
-          </Button>
-          <br />
-          <TextFeature />
-          <br />
-          <br />
-
-          <Accordion>
-            {Object.entries(menuOptions).map(([key, values], index) => (
-              <React.Fragment key={index}>
-                <Card className="text-center">
-                  <Card.Header>
-                    <Accordion.Toggle
-                      as={Button}
-                      variant="link"
-                      eventKey={index.toString()}
-                    >
-                      {key}
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey={index.toString()}>
-                    <Card.Body>
-                      <ListGroup variant="flush">
-                        {values.map((value, index) => (
-                          <ListGroup.Item key={index}>{value}</ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </React.Fragment>
-            ))}
-          </Accordion>
-        </Card>
-      </Container>
+      <MenuOptions />
 
       <Map id="MyMap" onClick={handleClick} {...mapOptions}>
         {Credits} {/* Always need credits */}
