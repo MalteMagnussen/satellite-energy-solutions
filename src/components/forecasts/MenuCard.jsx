@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Container,
   // Row,
@@ -9,23 +9,91 @@ import {
   // ListGroupItem,
   Accordion,
   // ToggleButtonGroup
+  Modal,
 } from "react-bootstrap";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
 import electricity2015 from "./biddingzones/2015electricity";
+import { Line } from "react-chartjs-2";
 
 const menuCard = (setFeature, feature, zone, lat, lng) => {
   return () => {
     const handleChange = (val) => setFeature(val);
     // This is the top Feature of the card.
     const TextFeature = () => {
+      // ZONE FEATURE START
       if (feature === "zones") {
         const Electricity2015button = (props) => {
-          if (Object.keys(electricity2015).includes(zone)) {
+          const [show, setShow] = useState(false);
+          const [chartData, setChartData] = useState({});
+          const handleClose = () => setShow(false);
+          const handleShow = () => setShow(true);
+          const chart = () => {
+            let data = [];
+            if (zone) {
+              data = electricity2015[zone].map((integer) => Number(integer));
+            }
+            setChartData({
+              labels: data,
+              datasets: [
+                {
+                  label: zone,
+                  data,
+                  backgroundColor: ["rgba(75, 192, 192, 0.6"],
+                  borderWidth: 4,
+                  pointRadius: 0,
+                },
+              ],
+            });
+          };
+          useEffect(() => {
+            chart();
+          }, []);
+          if (countries2015electricity.includes(zone)) {
             return (
               <>
                 <br />
-                <Button variant="info">2015 Electricity for {zone}</Button>
+                <Button variant="info" onClick={handleShow}>
+                  2015 Electricity for {zone}
+                </Button>
+                <Modal centered show={show} onHide={handleClose} size="lg">
+                  <Modal.Header closeButton>
+                    <Modal.Title>
+                      Electricity prize per hour for 2015 for {zone}
+                    </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <Line
+                      data={chartData}
+                      options={{
+                        responsive: true,
+                        scales: {
+                          yAxes: [
+                            {
+                              ticks: {
+                                autoSkip: true,
+                                maxTicksLimit: 0,
+                              },
+                              gridLines: {
+                                display: false,
+                              },
+                            },
+                          ],
+                          xAxes: [
+                            {
+                              gridLines: { display: false },
+                            },
+                          ],
+                        },
+                      }}
+                    />
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="secondary" onClick={handleClose}>
+                      Close
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
               </>
             );
           } else if (zone) {
@@ -38,6 +106,7 @@ const menuCard = (setFeature, feature, zone, lat, lng) => {
             return null;
           }
         };
+
         return (
           <>
             <div className="text-center">
@@ -47,7 +116,8 @@ const menuCard = (setFeature, feature, zone, lat, lng) => {
             </div>
           </>
         );
-      } else if (feature === "point") {
+      } // POINT FEATURE START
+      else if (feature === "point") {
         return (
           <>
             <div className="text-center">
@@ -108,5 +178,26 @@ const Credits = () => {
     </Accordion>
   );
 };
+
+const countries2015electricity = [
+  "BE",
+  "DE",
+  "DK1",
+  "DK2",
+  "FI",
+  "FR",
+  "NL",
+  "NO1",
+  "NO2",
+  "NO3",
+  "NO4",
+  "NO5",
+  "PL",
+  "SE1",
+  "SE2",
+  "SE3",
+  "SE4",
+  "UK",
+];
 
 export default menuCard;
