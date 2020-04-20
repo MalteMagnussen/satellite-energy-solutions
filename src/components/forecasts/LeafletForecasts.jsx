@@ -138,10 +138,7 @@ const Forecasts = () => {
       <>
         {Europe.features.map((area) => (
           <React.Fragment key={area.id}>
-            <GeoJSON
-              onClick={() => setZone(area.properties.NAME_ENGL)}
-              data={area}
-            />
+            <GeoJSON onClick={() => setZone(area.id)} data={area} />
           </React.Fragment>
         ))}
       </>
