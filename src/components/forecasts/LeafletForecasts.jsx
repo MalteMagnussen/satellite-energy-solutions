@@ -1,16 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  Container,
-  // Row,
-  // Col,
-  Card,
-  Button,
-  ListGroup,
-  // ListGroupItem,
-  Accordion,
-  // ToggleButtonGroup
-} from "react-bootstrap";
-import {
   Map,
   TileLayer,
   Marker,
@@ -22,12 +11,12 @@ import {
 } from "react-leaflet";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
-import menuOptions from "./MenuOptions";
 import Sjaelland from "./biddingzones/sjaelland";
 import Jylland from "./biddingzones/jylland";
 import Sverige from "./biddingzones/sverige";
 import Norway from "./biddingzones/norway";
 import Europe from "./biddingzones/europe";
+import menuCard from "./MenuCard";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -57,79 +46,7 @@ const Forecasts = () => {
   }, []);
 
   // The Card at the left side of the Map "Forecasting" view.
-  const MenuOptions = () => {
-    const handleChange = (val) => setFeature(val);
-
-    // This is the top Feature of the card.
-    const TextFeature = () => {
-      if (feature === "zones") {
-        return (
-          <>
-            <div className="text-center">
-              <h5>Zones</h5>Select a Zone to see more information. <br /> Zone
-              Selected: {zone}
-            </div>
-          </>
-        );
-      } else if (feature === "point") {
-        return (
-          <>
-            <div className="text-center">
-              <h5>Point</h5>
-              Marker is currently placed at:
-              <br />
-              lat: {lat}
-              <br />
-              lng: {lng}
-            </div>
-          </>
-        );
-      } else {
-        return null;
-      }
-    };
-
-    return (
-      <Container id="Card">
-        <Card>
-          <Button variant="light" onClick={() => handleChange("point")}>
-            Point Feature
-          </Button>
-          <Button variant="light" onClick={() => handleChange("zones")}>
-            Bidding Zones
-          </Button>
-          <br />
-          <TextFeature />
-          <br />
-
-          <Accordion>
-            <Card className="text-center">
-              <Card.Header>
-                <Accordion.Toggle
-                  as={Button}
-                  variant="link"
-                  eventKey={"Credits"}
-                >
-                  Credits
-                </Accordion.Toggle>
-              </Card.Header>
-              <Accordion.Collapse eventKey={"Credits"}>
-                <Card.Body>
-                  <ListGroup variant="flush">
-                    EN: © EuroGeographics for the administrative boundaries
-                    <br />
-                    FR: © EuroGeographics pour les limites administratives
-                    <br />
-                    DE: © EuroGeographics bezüglich der Verwaltungsgrenzen
-                  </ListGroup>
-                </Card.Body>
-              </Accordion.Collapse>
-            </Card>
-          </Accordion>
-        </Card>
-      </Container>
-    );
-  };
+  const MenuOptions = menuCard(setFeature, feature, zone, lat, lng);
 
   // The Point and Bidding Zone features.
   const MyMapFeatures = () => {
