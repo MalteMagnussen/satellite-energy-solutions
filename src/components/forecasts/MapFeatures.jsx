@@ -42,8 +42,9 @@ function MapFeatures(setZone, feature, lat, lng) {
     if (feature === "zones") {
       return (
         <>
-          {areas.map((area) => (
+          {areas.map((area, index) => (
             <GeoJSON
+              key={index}
               onClick={() => setZone(area.properties.name)}
               data={area}
             />
