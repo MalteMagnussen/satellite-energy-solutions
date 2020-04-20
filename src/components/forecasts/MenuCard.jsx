@@ -48,7 +48,7 @@ const menuCard = (setFeature, feature, zone, lat, lng) => {
           };
           useEffect(() => {
             chart();
-          }, [zone, feature]);
+          }, []);
           if (countries2015electricity.includes(zone)) {
             return (
               <>
