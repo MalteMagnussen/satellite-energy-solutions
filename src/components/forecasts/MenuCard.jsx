@@ -16,6 +16,9 @@ import "leaflet/dist/leaflet.css";
 import electricity2015 from "./biddingzones/2015electricity";
 import { Line } from "react-chartjs-2";
 
+/*
+ * TODO MAKE MAP ZOOM AND PAN
+ */
 const menuCard = (setFeature, feature, zone, lat, lng) => {
   return () => {
     const handleChange = (val) => setFeature(val);
@@ -30,7 +33,7 @@ const menuCard = (setFeature, feature, zone, lat, lng) => {
           const handleShow = () => setShow(true);
           const chart = () => {
             let data = [];
-            if (zone) {
+            if (zone && countries2015electricity.includes(zone)) {
               data = electricity2015[zone].map((integer) => Number(integer));
             }
             setChartData({
