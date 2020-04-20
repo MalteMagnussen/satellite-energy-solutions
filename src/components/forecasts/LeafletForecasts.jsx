@@ -56,20 +56,6 @@ const Forecasts = () => {
     });
   }, []);
 
-  const Credits = (
-    <TileLayer
-      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    />
-  );
-
-  const SatelliteImagery = (
-    <TileLayer
-      url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
-      attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
-    />
-  );
-
   const MyMapFeatures = () => {
     const areas = [Norway, Sjaelland, Jylland];
     const EuropeFeature = (
@@ -205,11 +191,23 @@ const Forecasts = () => {
 
       <Map id="MyMap" onClick={handleClick} {...mapOptions}>
         {Credits} {/* Always need credits */}
-        {SatelliteImagery}
         <MyMapFeatures />
       </Map>
     </>
   );
 };
+
+const Credits = (
+  <>
+    <TileLayer
+      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    />
+    <TileLayer
+      url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
+      attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+    />
+  </>
+);
 
 export default Forecasts;
