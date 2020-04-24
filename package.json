@@ -6,6 +6,7 @@
   "dependencies": {
     "bootstrap": "^4.4.1",
     "chart.js": "^2.9.3",
+    "chartjs-plugin-zoom": "^0.7.5",
     "leaflet": "^1.6.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
