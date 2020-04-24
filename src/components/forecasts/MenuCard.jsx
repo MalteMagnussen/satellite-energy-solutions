@@ -97,25 +97,4 @@ const Credits = () => {
   );
 };
 
-const countries2015electricity = [
-  "BE",
-  "DE",
-  "DK1",
-  "DK2",
-  "FI",
-  "FR",
-  "NL",
-  "NO1",
-  "NO2",
-  "NO3",
-  "NO4",
-  "NO5",
-  "PL",
-  "SE1",
-  "SE2",
-  "SE3",
-  "SE4",
-  "UK",
-];
-
 export default menuCard;

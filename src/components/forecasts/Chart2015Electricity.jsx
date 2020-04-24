@@ -3,7 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import electricity2015 from "./biddingzones/2015electricity";
 import { Line } from "react-chartjs-2";
 
-function chartFor2015Electricity({ zone }) {
+const ChartFor2015Electricity = ({ zone }) => {
   const [show, setShow] = useState(false);
   const [chartData, setChartData] = useState({});
   const handleClose = () => setShow(false);
@@ -85,5 +85,26 @@ function chartFor2015Electricity({ zone }) {
   } else {
     return null;
   }
-}
-export default chartFor2015Electricity;
+};
+
+const countries2015electricity = [
+  "BE",
+  "DE",
+  "DK1",
+  "DK2",
+  "FI",
+  "FR",
+  "NL",
+  "NO1",
+  "NO2",
+  "NO3",
+  "NO4",
+  "NO5",
+  "PL",
+  "SE1",
+  "SE2",
+  "SE3",
+  "SE4",
+  "UK",
+];
+export default ChartFor2015Electricity;
