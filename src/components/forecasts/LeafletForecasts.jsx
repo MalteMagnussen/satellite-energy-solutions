@@ -53,7 +53,7 @@ const Forecasts = () => {
           onClick={handleClick}
           {...mapOptions}
         >
-          {Credits} {/* Always need credits  */}
+          {Credits} {/* Always need credits */}
           <MapFeatures
             setZone={setZone}
             feature={feature}
