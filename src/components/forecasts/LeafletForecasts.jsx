@@ -1,33 +1,10 @@
 import React, { useState, useEffect } from "react";
-import {
-  Container,
-  // Row,
-  // Col,
-  Card,
-  Button,
-  ListGroup,
-  // ListGroupItem,
-  Accordion,
-  // ToggleButtonGroup
-} from "react-bootstrap";
-import {
-  Map,
-  TileLayer,
-  Marker,
-  Popup,
-  // FeatureGroup,
-  // Circle,
-  // Rectangle
-  GeoJSON,
-} from "react-leaflet";
+import { Map, TileLayer } from "react-leaflet";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
-import menuOptions from "./MenuOptions";
-import Sjaelland from "./biddingzones/sjaelland";
-import Jylland from "./biddingzones/jylland";
-import Sverige from "./biddingzones/sverige";
-import Norway from "./biddingzones/norway";
-import Europe from "./biddingzones/europe";
+import MenuOptions from "./MenuCard";
+import MapFeatures from "./MapFeatures";
+import useWindowDimensions from "../util/WindowDimensions";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -36,6 +13,7 @@ const Forecasts = () => {
   const [lng, setLng] = useState(startLocation[1]);
   const [feature, setFeature] = useState("zones");
   const [zone, setZone] = useState();
+
   const handleClick = (e) => {
     setLat(e.latlng.lat);
     setLng(e.latlng.lng);
@@ -44,8 +22,8 @@ const Forecasts = () => {
     center: [...startLocation],
     zoom: 4,
   };
-  const handleChange = (val) => setFeature(val);
 
+  // This useEffect runs once when page loads.
   useEffect(() => {
     // The following is magic, to allow Marker to work. From: https://github.com/PaulLeCam/react-leaflet/issues/453#issuecomment-541142178
     delete L.Icon.Default.prototype._getIconUrl;
@@ -56,160 +34,49 @@ const Forecasts = () => {
     });
   }, []);
 
-  const Credits = (
+  const { height, width } = useWindowDimensions();
+  const leafletHeight = height - 56;
+
+  return (
+    <>
+      <MenuOptions
+        setFeature={setFeature}
+        feature={feature}
+        zone={zone}
+        lat={lat}
+        lng={lng}
+      />
+      <div>
+        <Map
+          style={{ height: `${leafletHeight}px`, width: `${width}px` }}
+          id="MyMap"
+          onClick={handleClick}
+          {...mapOptions}
+        >
+          {Credits} {/* Always need credits */}
+          <MapFeatures
+            setZone={setZone}
+            feature={feature}
+            lat={lat}
+            lng={lng}
+          />
+        </Map>
+      </div>
+    </>
+  );
+};
+
+const Credits = (
+  <>
     <TileLayer
       url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     />
-  );
-
-  const SatelliteImagery = (
     <TileLayer
       url="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}"
       attribution="Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
     />
-  );
-
-  const MyMapFeatures = () => {
-    const areas = [Norway, Sjaelland, Jylland];
-    const EuropeFeature = (
-      <>
-        {Europe.features.map((area) => (
-          <React.Fragment key={area.id}>
-            <GeoJSON
-              onClick={() => setZone(area.properties.NAME_ENGL)}
-              data={area}
-            />
-          </React.Fragment>
-        ))}
-      </>
-    );
-    const SverigeFeature = (
-      <>
-        {Sverige.map((area, index) => (
-          <React.Fragment key={index}>
-            <GeoJSON
-              onClick={() => setZone(area.properties.name)}
-              data={area}
-            />
-          </React.Fragment>
-        ))}
-      </>
-    );
-
-    if (feature === "zones") {
-      return (
-        <>
-          {areas.map((area) => (
-            <GeoJSON
-              onClick={() => setZone(area.properties.name)}
-              data={area}
-            />
-          ))}
-          {SverigeFeature}
-          {EuropeFeature}
-        </>
-      );
-    } else if (feature === "point") {
-      return (
-        <>
-          <Marker position={[lat, lng]}>
-            <Popup>
-              Get Data about your Feasibility Study
-              <br />
-              This marker is placed at
-              <br />
-              Lat: {lat}
-              <br />
-              Long: {lng}
-            </Popup>
-          </Marker>
-        </>
-      );
-    } else {
-      return null;
-    }
-  };
-
-  const TextFeature = () => {
-    if (feature === "zones") {
-      return (
-        <>
-          <div className="text-center">
-            <h5>Zones</h5>Select a Zone to see more information. <br /> Zone
-            Selected: {zone}
-          </div>
-        </>
-      );
-    } else if (feature === "point") {
-      return (
-        <>
-          <div className="text-center">
-            <h5>Point</h5>
-            Marker is currently placed at:
-            <br />
-            lat: {lat}
-            <br />
-            lng: {lng}
-          </div>
-        </>
-      );
-    } else {
-      return null;
-    }
-  };
-
-  return (
-    <>
-      <Container id="Card">
-        <Card>
-          <Button variant="light" onClick={() => handleChange("point")}>
-            Point Feature
-          </Button>
-          <Button variant="light" onClick={() => handleChange("zones")}>
-            Bidding Zone Feature
-          </Button>
-          <br />
-          <TextFeature />
-          <br />
-          <br />
-
-          <Accordion>
-            {Object.entries(menuOptions).map(([key, values], index) => (
-              <React.Fragment key={index}>
-                <Card className="text-center">
-                  <Card.Header>
-                    <Accordion.Toggle
-                      as={Button}
-                      variant="link"
-                      eventKey={index.toString()}
-                    >
-                      {key}
-                    </Accordion.Toggle>
-                  </Card.Header>
-                  <Accordion.Collapse eventKey={index.toString()}>
-                    <Card.Body>
-                      <ListGroup variant="flush">
-                        {values.map((value, index) => (
-                          <ListGroup.Item key={index}>{value}</ListGroup.Item>
-                        ))}
-                      </ListGroup>
-                    </Card.Body>
-                  </Accordion.Collapse>
-                </Card>
-              </React.Fragment>
-            ))}
-          </Accordion>
-        </Card>
-      </Container>
-
-      <Map id="MyMap" onClick={handleClick} {...mapOptions}>
-        {Credits} {/* Always need credits */}
-        {SatelliteImagery}
-        <MyMapFeatures />
-      </Map>
-    </>
-  );
-};
+  </>
+);
 
 export default Forecasts;

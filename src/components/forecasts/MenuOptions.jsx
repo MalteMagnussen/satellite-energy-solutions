@@ -4,24 +4,24 @@ const Data = {
     "Generation levels",
     "Installed capacity",
     "Electricity demand",
-    "Environmental impact levels"
+    "Environmental impact levels",
   ],
   "Long term forecasts": [
     "Day ahead prices",
     "Generation levels",
     "Installed capacity",
     "Electricity demand",
-    "Environmetal impact levels"
+    "Environmetal impact levels",
   ],
   "Wind related": [
     "Wind capture prices",
     "Wind capture price correlated to wind speeds",
-    "Turbine data"
+    "Turbine data",
   ],
   Credits: [
     "EN: © EuroGeographics for the administrative boundaries",
     "FR: © EuroGeographics pour les limites administratives",
-    "DE: © EuroGeographics bezüglich der Verwaltungsgrenzen"
-  ]
+    "DE: © EuroGeographics bezüglich der Verwaltungsgrenzen",
+  ],
 };
 export default Data;

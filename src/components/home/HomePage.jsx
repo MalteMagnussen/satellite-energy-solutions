@@ -14,6 +14,7 @@ const cardImageStyle = {
 const HomePage = () => {
   return (
     <>
+      <br />
       <h1 style={{ marginLeft: "50px" }}>
         Tradewind supplies precise projections <br></br>and data for your
         renewable business case

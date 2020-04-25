@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import {
+  Navbar,
+  Nav,
+  //NavDropdown
+} from "react-bootstrap";
 
 const NavBar = () => {
   const [selectedNavItem, setSelectedNavItem] = useState("#/");

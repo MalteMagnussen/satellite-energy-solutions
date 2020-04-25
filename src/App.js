@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <NavBar></NavBar>
-      <br></br>
+
       <HashRouter>
         <ScrollToTop />
         <Switch>
@@ -41,7 +41,12 @@ function App() {
 }
 
 const NoMatch = () => {
-  return <h1 style={{ marginLeft: 30 }}>There is nothing here.</h1>;
+  return (
+    <>
+      <br />
+      <h1 style={{ marginLeft: 30 }}>There is nothing here.</h1>
+    </>
+  );
 };
 
 export default App;
