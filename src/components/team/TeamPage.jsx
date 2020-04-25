@@ -9,6 +9,7 @@ import Collaborators from "../collaborators/Collaborators";
 const TeamPage = () => {
   return (
     <>
+      <br />
       <h1 style={{ textAlign: "center" }}>Meet the Founders</h1>
 
       <br></br>

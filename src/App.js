@@ -18,7 +18,7 @@ function App() {
   return (
     <div>
       <NavBar></NavBar>
-      <br></br>
+
       <HashRouter>
         <ScrollToTop />
         <Switch>

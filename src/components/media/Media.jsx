@@ -8,7 +8,7 @@ import {
   Modal,
   Image,
   Carousel,
-  CardColumns
+  CardColumns,
 } from "react-bootstrap";
 import Flyer_page_001 from "./posters/Flyer-page-001.jpg";
 import Flyer_page_002 from "./posters/Flyer-page-002.jpg";
@@ -24,6 +24,7 @@ const MyMedia = () => {
   return (
     <>
       <div style={{ margin: 20 }}>
+        <br />
         <h1 className="text-center">Our Media</h1>
         <CardColumns>
           <CustomMedia
@@ -152,7 +153,7 @@ const PosterCarousel = ({ images }) => {
   return (
     <>
       <Carousel interval="5000">
-        {images.map(image => (
+        {images.map((image) => (
           <Carousel.Item>
             <Image className="d-block w-100" src={image} alt="" fluid />
           </Carousel.Item>
