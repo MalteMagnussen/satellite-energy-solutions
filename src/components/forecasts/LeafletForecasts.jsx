@@ -4,6 +4,7 @@ import "./forecast.css";
 import "leaflet/dist/leaflet.css";
 import MenuOptions from "./MenuCard";
 import MapFeatures from "./MapFeatures";
+import useWindowDimensions from "../util/WindowDimensions";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -12,6 +13,7 @@ const Forecasts = () => {
   const [lng, setLng] = useState(startLocation[1]);
   const [feature, setFeature] = useState("zones");
   const [zone, setZone] = useState();
+
   const handleClick = (e) => {
     setLat(e.latlng.lat);
     setLng(e.latlng.lng);
@@ -32,6 +34,9 @@ const Forecasts = () => {
     });
   }, []);
 
+  const { height, width } = useWindowDimensions();
+  const leafletHeight = height - 56;
+
   return (
     <>
       <MenuOptions
@@ -41,11 +46,22 @@ const Forecasts = () => {
         lat={lat}
         lng={lng}
       />
-
-      <Map id="MyMap" onClick={handleClick} {...mapOptions}>
-        {Credits} {/* Always need credits */}
-        <MapFeatures setZone={setZone} feature={feature} lat={lat} lng={lng} />
-      </Map>
+      <div>
+        <Map
+          style={{ height: `${leafletHeight}px`, width: `${width}px` }}
+          id="MyMap"
+          onClick={handleClick}
+          {...mapOptions}
+        >
+          {Credits} {/* Always need credits */}
+          <MapFeatures
+            setZone={setZone}
+            feature={feature}
+            lat={lat}
+            lng={lng}
+          />
+        </Map>
+      </div>
     </>
   );
 };
