@@ -35,16 +35,13 @@ const Forecasts = () => {
   // The Card at the left side of the Map "Forecasting" view.
   const MenuOptions = menuCard(setFeature, feature, zone, lat, lng);
 
-  // The Point and Bidding Zone features.
-  const MyMapFeatures = MapFeatures(setZone, feature, lat, lng);
-
   return (
     <>
       <MenuOptions />
 
       <Map id="MyMap" onClick={handleClick} {...mapOptions}>
         {Credits} {/* Always need credits */}
-        <MyMapFeatures />
+        <MapFeatures setZone={setZone} feature={feature} lat={lat} lng={lng} />
       </Map>
     </>
   );

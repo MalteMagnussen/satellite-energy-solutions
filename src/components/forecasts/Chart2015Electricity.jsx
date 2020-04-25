@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Button, Modal } from "react-bootstrap";
 import electricity2015 from "./biddingzones/2015electricity";
 import { Line } from "react-chartjs-2";
-import { Link } from "react-router-dom";
 // import * as Zoom from "chartjs-plugin-zoom";
 
 const ChartFor2015Electricity = ({ zone }) => {
