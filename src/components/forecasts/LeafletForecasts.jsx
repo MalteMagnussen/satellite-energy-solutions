@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Map, TileLayer } from "react-leaflet";
 import "./forecast.css";
 import "leaflet/dist/leaflet.css";
-import menuCard from "./MenuCard";
+import MenuOptions from "./MenuCard";
 import MapFeatures from "./MapFeatures";
 const L = require("leaflet");
 
@@ -32,12 +32,15 @@ const Forecasts = () => {
     });
   }, []);
 
-  // The Card at the left side of the Map "Forecasting" view.
-  const MenuOptions = menuCard(setFeature, feature, zone, lat, lng);
-
   return (
     <>
-      <MenuOptions />
+      <MenuOptions
+        setFeature={setFeature}
+        feature={feature}
+        zone={zone}
+        lat={lat}
+        lng={lng}
+      />
 
       <Map id="MyMap" onClick={handleClick} {...mapOptions}>
         {Credits} {/* Always need credits */}

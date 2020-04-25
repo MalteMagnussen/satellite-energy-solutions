@@ -18,58 +18,56 @@ import ChartFor2015Electricity from "./Chart2015Electricity";
 /*
  * TODO MAKE MAP ZOOM AND PAN
  */
-const menuCard = (setFeature, feature, zone, lat, lng) => {
-  return () => {
-    const handleChange = (val) => setFeature(val);
-    // This is the top Feature of the card.
-    const TextFeature = () => {
-      // ZONE FEATURE START
-      if (feature === "zones") {
-        return (
-          <>
-            <div className="text-center">
-              <h5>Zones</h5>Select a Zone to see more information.
-              <ChartFor2015Electricity zone={zone} />
-              <br />
-            </div>
-          </>
-        );
-      } // POINT FEATURE START
-      else if (feature === "point") {
-        return (
-          <>
-            <div className="text-center">
-              <h5>Point</h5>
-              Marker is currently placed at:
-              <br />
-              lat: {lat}
-              <br />
-              lng: {lng}
-            </div>
-          </>
-        );
-      } else {
-        return null;
-      }
-    };
-    return (
-      <Container id="Card">
-        <Card>
-          <Button variant="light" onClick={() => handleChange("point")}>
-            Point Feature
-          </Button>
-          <Button variant="light" onClick={() => handleChange("zones")}>
-            Bidding Zones
-          </Button>
-          <br />
-          <TextFeature />
-          <br />
-
-          <Credits />
-        </Card>
-      </Container>
-    );
+const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
+  const handleChange = (val) => setFeature(val);
+  // This is the top Feature of the card.
+  const TextFeature = () => {
+    // ZONE FEATURE START
+    if (feature === "zones") {
+      return (
+        <>
+          <div className="text-center">
+            <h5>Zones</h5>Select a Zone to see more information.
+            <ChartFor2015Electricity zone={zone} />
+            <br />
+          </div>
+        </>
+      );
+    } // POINT FEATURE START
+    else if (feature === "point") {
+      return (
+        <>
+          <div className="text-center">
+            <h5>Point</h5>
+            Marker is currently placed at:
+            <br />
+            lat: {lat}
+            <br />
+            lng: {lng}
+          </div>
+        </>
+      );
+    } else {
+      return null;
+    }
   };
+  return (
+    <Container id="Card">
+      <Card>
+        <Button variant="light" onClick={() => handleChange("point")}>
+          Point Feature
+        </Button>
+        <Button variant="light" onClick={() => handleChange("zones")}>
+          Bidding Zones
+        </Button>
+        <br />
+        <TextFeature />
+        <br />
+
+        <Credits />
+      </Card>
+    </Container>
+  );
 };
 
 const Credits = () => {
@@ -97,4 +95,4 @@ const Credits = () => {
   );
 };
 
-export default menuCard;
+export default MenuOptions;
