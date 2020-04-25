@@ -5,6 +5,7 @@ import "leaflet/dist/leaflet.css";
 import MenuOptions from "./MenuCard";
 import MapFeatures from "./MapFeatures";
 import useWindowDimensions from "../util/WindowDimensions";
+import { Container, Row, Col } from "react-bootstrap";
 const L = require("leaflet");
 
 const Forecasts = () => {
@@ -39,31 +40,61 @@ const Forecasts = () => {
 
   return (
     <>
-      <MenuOptions
-        setFeature={setFeature}
-        feature={feature}
-        zone={zone}
-        lat={lat}
-        lng={lng}
-      />
-      <div>
-        <Map
-          style={{ height: `${leafletHeight}px`, width: `${width}px` }}
-          id="MyMap"
-          onClick={handleClick}
-          {...mapOptions}
-        >
-          {Credits} {/* Always need credits */}
-          <MapFeatures
-            setZone={setZone}
-            feature={feature}
-            lat={lat}
-            lng={lng}
-          />
-        </Map>
-      </div>
+      <Container fluid>
+        <Row>
+          <Col style={styles.col1} sm="auto">
+            <MenuOptions
+              setFeature={setFeature}
+              feature={feature}
+              zone={zone}
+              lat={lat}
+              lng={lng}
+            />
+          </Col>
+          <Col style={styles.col2}>
+            <Map
+              style={{ height: `${leafletHeight}px`, width: `100%` }}
+              id="MyMap"
+              onClick={handleClick}
+              {...mapOptions}
+            >
+              {Credits} {/* Always need credits */}
+              <MapFeatures
+                setZone={setZone}
+                feature={feature}
+                lat={lat}
+                lng={lng}
+              />
+            </Map>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
+};
+
+const styles = {
+  grid: {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+  row: {
+    marginLeft: 0,
+    marginRight: 0,
+  },
+  col1: {
+    paddingLeft: 0,
+    paddingRight: 0,
+    width: "30%",
+  },
+  col2: {
+    paddingLeft: 0,
+    paddingRight: 0,
+  },
+  myPadding: {
+    paddingLeft: 15,
+    paddingRight: 15,
+  },
 };
 
 const Credits = (
