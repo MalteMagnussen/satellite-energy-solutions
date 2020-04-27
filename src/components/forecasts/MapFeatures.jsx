@@ -16,39 +16,23 @@ import Norway from "./biddingzones/norway";
 import Europe from "./biddingzones/europe";
 
 const MapFeatures = ({ setZone, feature, lat, lng }) => {
-  const areas = [Norway, Sjaelland, Jylland];
+  const areas = [Norway, Sjaelland, Jylland, Sverige, Europe];
   const EuropeFeature = (
     <>
-      {Europe.features.map((area) => (
-        <React.Fragment key={area.id}>
-          <GeoJSON onClick={() => setZone(area.id)} data={area} />
-        </React.Fragment>
+      {areas.map((area) => (
+        <>
+          {area.features.map((area) => (
+            <React.Fragment key={area.id}>
+              <GeoJSON onClick={() => setZone(area.id)} data={area} />
+            </React.Fragment>
+          ))}
+        </>
       ))}
     </>
   );
-  const SverigeFeature = (
-    <>
-      {Sverige.map((area, index) => (
-        <React.Fragment key={index}>
-          <GeoJSON onClick={() => setZone(area.properties.name)} data={area} />
-        </React.Fragment>
-      ))}
-    </>
-  );
+
   if (feature === "zones") {
-    return (
-      <>
-        {areas.map((area, index) => (
-          <GeoJSON
-            key={index}
-            onClick={() => setZone(area.properties.name)}
-            data={area}
-          />
-        ))}
-        {SverigeFeature}
-        {EuropeFeature}
-      </>
-    );
+    return <>{EuropeFeature}</>;
   } else if (feature === "point") {
     return (
       <>
