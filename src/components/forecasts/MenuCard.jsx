@@ -26,6 +26,7 @@ const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
     return (
       <>
         <div className="text-center" style={styles.myPadding}>
+          <br />
           <h5>Zones</h5>Select a Zone to see more information.
           <ChartFor2015Electricity zone={zone} />
           <br />
@@ -44,6 +45,7 @@ const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
       >
         <Tab eventKey="point" title="Point">
           <div style={styles.myPadding} className="text-center">
+            <br />
             <h5>Point</h5>
             Marker is currently placed at:
             <br />
