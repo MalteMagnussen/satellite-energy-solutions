@@ -3,7 +3,7 @@ const Norway = {
   properties: { name: "NO" },
   features: [
     {
-      id: "NO",
+      id: "NO2",
       type: "Feature",
       properties: {},
       geometry: {
@@ -25,7 +25,7 @@ const Norway = {
       },
     },
     {
-      id: "NO",
+      id: "NO5",
       type: "Feature",
       properties: {},
       geometry: {
@@ -45,7 +45,7 @@ const Norway = {
       },
     },
     {
-      id: "NO",
+      id: "NO1",
       type: "Feature",
       properties: {},
       geometry: {
@@ -101,7 +101,7 @@ const Norway = {
       },
     },
     {
-      id: "NO",
+      id: "NO3",
       type: "Feature",
       properties: {},
       geometry: {
@@ -142,7 +142,7 @@ const Norway = {
       },
     },
     {
-      id: "NO",
+      id: "NO4",
       type: "Feature",
       properties: {},
       geometry: {

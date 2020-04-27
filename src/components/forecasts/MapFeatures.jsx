@@ -54,7 +54,6 @@ const MapFeatures = ({ zone, setZone, feature, lat, lng }) => {
         />
       );
     };
-
     const areas = [Norway, Sjaelland, Jylland, Sverige, Europe];
     return <Areas areas={areas} />;
   };
