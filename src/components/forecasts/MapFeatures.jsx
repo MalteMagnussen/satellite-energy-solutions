@@ -70,3 +70,20 @@ const MapFeatures = ({ setZone, feature, lat, lng }) => {
 };
 
 export default MapFeatures;
+
+/*
+    stroke?: boolean;
+    color?: string;
+    weight?: number;
+    opacity?: number;
+    lineCap?: LineCapShape;
+    lineJoin?: LineJoinShape;
+    dashArray?: string | number[];
+    dashOffset?: string;
+    fill?: boolean;
+    fillColor?: string;
+    fillOpacity?: number;
+    fillRule?: FillRule;
+    renderer?: Renderer;
+    className?: string;
+*/
