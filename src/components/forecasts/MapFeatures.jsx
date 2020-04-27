@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Marker,
   Popup,
@@ -15,29 +15,42 @@ import Sverige from "./biddingzones/sverige";
 import Norway from "./biddingzones/norway";
 import Europe from "./biddingzones/europe";
 
-const MapFeatures = ({ setZone, feature, lat, lng }) => {
+const MapFeatures = ({ zone, setZone, feature, lat, lng }) => {
   const EuropeFeature = () => {
     const Areas = ({ areas }) => {
-      return areas.map((area) => <Area area={area} />);
+      return areas.map((area, index) => <Area key={index} area={area} />);
     };
     const Area = ({ area }) => {
-      return area.features.map((feature) => <Feature feature={feature} />);
+      return area.features.map((feature, index) => (
+        <Feature key={index} feature={feature} />
+      ));
     };
     const Feature = ({ feature }) => {
+      const [style, setStyle] = useState({
+        fillOpacity: 0.2,
+      });
       const onHoverStyle = {
         fillOpacity: 0.4,
       };
       const onClickStyle = {
         fillOpacity: 0.8,
       };
-      const defaultStyle = () => {
-        return { fillOpacity: 0.2 };
+      const defaultStyle = {
+        fillOpacity: 0.2,
       };
       return (
         <GeoJSON
-          key={feature.id}
           onClick={() => setZone(feature.id)}
+          onmouseover={() => {
+            setStyle(onHoverStyle);
+          }}
+          onmouseout={() => {
+            setStyle(defaultStyle);
+          }}
           data={feature}
+          style={() => {
+            return feature.id === zone ? onClickStyle : style;
+          }}
         />
       );
     };

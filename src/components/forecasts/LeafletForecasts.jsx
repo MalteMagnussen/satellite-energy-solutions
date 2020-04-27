@@ -60,6 +60,7 @@ const Forecasts = () => {
             >
               {Credits} {/* Always need credits */}
               <MapFeatures
+                zone={zone}
                 setZone={setZone}
                 feature={feature}
                 lat={lat}
