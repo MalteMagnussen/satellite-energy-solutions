@@ -26,30 +26,30 @@ const MapFeatures = ({ zone, setZone, feature, lat, lng }) => {
       ));
     };
     const Feature = ({ feature }) => {
+      const onHoverOpacity = 0.4;
+      const defaultOpacity = 0.2;
       const [style, setStyle] = useState({
-        fillOpacity: 0.2,
+        fillOpacity: defaultOpacity,
       });
-      const onHoverStyle = {
-        fillOpacity: 0.4,
-      };
-      const onClickStyle = {
-        fillOpacity: 0.8,
-      };
-      const defaultStyle = {
-        fillOpacity: 0.2,
+      const setOpacity = (opacity) => {
+        setStyle({ ...style, fillOpacity: opacity });
       };
       return (
         <GeoJSON
           onClick={() => setZone(feature.id)}
           onmouseover={() => {
-            setStyle(onHoverStyle);
+            setOpacity(onHoverOpacity);
           }}
           onmouseout={() => {
-            setStyle(defaultStyle);
+            setOpacity(defaultOpacity);
           }}
           data={feature}
           style={() => {
-            return feature.id === zone ? onClickStyle : style;
+            return feature.id === zone
+              ? {
+                  fillOpacity: 0.8,
+                }
+              : style;
           }}
         />
       );
