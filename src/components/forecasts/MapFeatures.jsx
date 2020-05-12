@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Marker,
   Popup,
@@ -15,40 +15,51 @@ import Sverige from "./biddingzones/sverige";
 import Norway from "./biddingzones/norway";
 import Europe from "./biddingzones/europe";
 
-const MapFeatures = ({ setZone, feature, lat, lng }) => {
-  const areas = [Norway, Sjaelland, Jylland];
-  const EuropeFeature = (
-    <>
-      {Europe.features.map((area) => (
-        <React.Fragment key={area.id}>
-          <GeoJSON onClick={() => setZone(area.id)} data={area} />
-        </React.Fragment>
-      ))}
-    </>
-  );
-  const SverigeFeature = (
-    <>
-      {Sverige.map((area, index) => (
-        <React.Fragment key={index}>
-          <GeoJSON onClick={() => setZone(area.properties.name)} data={area} />
-        </React.Fragment>
-      ))}
-    </>
-  );
+const MapFeatures = ({ zone, setZone, feature, lat, lng }) => {
+  const EuropeFeature = () => {
+    const Areas = ({ areas }) => {
+      return areas.map((area, index) => <Area key={index} area={area} />);
+    };
+    const Area = ({ area }) => {
+      return area.features.map((feature, index) => (
+        <Feature key={index} feature={feature} />
+      ));
+    };
+    const Feature = ({ feature }) => {
+      const onHoverOpacity = 0.4;
+      const defaultOpacity = 0.2;
+      const [style, setStyle] = useState({
+        fillOpacity: defaultOpacity,
+      });
+      const setOpacity = (opacity) => {
+        setStyle({ ...style, fillOpacity: opacity });
+      };
+      return (
+        <GeoJSON
+          onClick={() => setZone(feature.id)}
+          onmouseover={() => {
+            setOpacity(onHoverOpacity);
+          }}
+          onmouseout={() => {
+            setOpacity(defaultOpacity);
+          }}
+          data={feature}
+          style={() => {
+            return feature.id === zone
+              ? {
+                  fillOpacity: 0.8,
+                }
+              : style;
+          }}
+        />
+      );
+    };
+    const areas = [Norway, Sjaelland, Jylland, Sverige, Europe];
+    return <Areas areas={areas} />;
+  };
+
   if (feature === "zones") {
-    return (
-      <>
-        {areas.map((area, index) => (
-          <GeoJSON
-            key={index}
-            onClick={() => setZone(area.properties.name)}
-            data={area}
-          />
-        ))}
-        {SverigeFeature}
-        {EuropeFeature}
-      </>
-    );
+    return <EuropeFeature />;
   } else if (feature === "point") {
     return (
       <>
@@ -71,3 +82,20 @@ const MapFeatures = ({ setZone, feature, lat, lng }) => {
 };
 
 export default MapFeatures;
+
+/*
+    stroke?: boolean;
+    color?: string;
+    weight?: number;
+    opacity?: number;
+    lineCap?: LineCapShape;
+    lineJoin?: LineJoinShape;
+    dashArray?: string | number[];
+    dashOffset?: string;
+    fill?: boolean;
+    fillColor?: string;
+    fillOpacity?: number;
+    fillRule?: FillRule;
+    renderer?: Renderer;
+    className?: string;
+*/
