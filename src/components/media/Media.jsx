@@ -28,6 +28,9 @@ const MyMedia = () => {
         <br />
         <h1 className="text-center">Our Media</h1>
         <CardColumns>
+          <Card>
+            <YouTubeVideo />
+          </Card>
           <CustomMedia
             flyers={[Flyer_page_001, Flyer_page_002]}
             title="Our Flyers"
@@ -54,9 +57,6 @@ const MyMedia = () => {
             ))()}
             myDownload={Posters}
           />
-          <Card>
-            <YouTubeVideo />
-          </Card>
         </CardColumns>
 
         <br />
@@ -74,7 +74,10 @@ const YouTubeVideo = () => {
       <Card className="text-center" border="light">
         <Card.Body>
           <Card.Title>
-            <ReactPlayer url="https://www.youtube.com/watch?v=JpMyj0_NGUQ" />
+            <ReactPlayer
+              width={"100%"}
+              url="https://www.youtube.com/watch?v=JpMyj0_NGUQ"
+            />
           </Card.Title>
           <Card.Text>
             <h4>Application video for the Microgrant</h4>
