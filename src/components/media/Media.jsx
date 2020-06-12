@@ -10,6 +10,7 @@ import {
   Carousel,
   CardColumns,
 } from "react-bootstrap";
+import ReactPlayer from "react-player";
 import Flyer_page_001 from "./posters/Flyer-page-001.jpg";
 import Flyer_page_002 from "./posters/Flyer-page-002.jpg";
 import Flyer from "./posters/Flyer.pdf";
@@ -27,6 +28,9 @@ const MyMedia = () => {
         <br />
         <h1 className="text-center">Our Media</h1>
         <CardColumns>
+          <Card>
+            <YouTubeVideo />
+          </Card>
           <CustomMedia
             flyers={[Flyer_page_001, Flyer_page_002]}
             title="Our Flyers"
@@ -53,9 +57,6 @@ const MyMedia = () => {
             ))()}
             myDownload={Posters}
           />
-          <Card>
-            <YouTubeVideo />
-          </Card>
         </CardColumns>
 
         <br />
@@ -73,29 +74,24 @@ const YouTubeVideo = () => {
       <Card className="text-center" border="light">
         <Card.Body>
           <Card.Title>
-            <iframe
-              title="unique title property"
-              width="560"
-              height="315"
-              src="https://www.youtube-nocookie.com/embed/qSmpEQlhITY"
-              frameborder="0"
-              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
+            <ReactPlayer
+              width={"100%"}
+              url="https://www.youtube.com/watch?v=JpMyj0_NGUQ"
+            />
           </Card.Title>
           <Card.Text>
-            <h4>Application video for the Danish Innovation Price</h4>
+            <h4>Application video for the Microgrant</h4>
           </Card.Text>
           <Button
             variant="primary"
-            href="https://www.via.dk/kampagner/innovationsprisen"
+            href="https://mikrolegat.ffe-ye.dk/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            Innovation Price website
+            Microgrant website
           </Button>
           <br />
-          <small className="text-muted">We reached the semi-finals.</small>
+          {/* <small className="text-muted">We reached the semi-finals.</small> */}
         </Card.Body>
       </Card>
     </>

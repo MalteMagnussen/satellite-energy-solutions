@@ -103,8 +103,8 @@ const MyCards = () => {
           <Card.Body>
             <Card.Title>Malte Hviid-Magnussen</Card.Title>
             <Card.Text style={{ textAlign: "justify" }}>
-              As a top student at CPH Business studying computer science, Malte
-              maintains SES’ IT-systems and websites.
+              As a top student at Copenhagen Business Academy studying Computer
+              Science, Malte maintains Tradewinds’ IT-systems and websites.
             </Card.Text>
           </Card.Body>
           <Card.Footer>
