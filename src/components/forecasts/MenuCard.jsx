@@ -37,6 +37,7 @@ const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
 
   return (
     <>
+      <h3 className="text-center">[Under Development]</h3>
       <Tabs
         style={styles.tabs}
         id="controlled-tab-example"
