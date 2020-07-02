@@ -37,7 +37,11 @@ const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
 
   return (
     <>
-      <h3 className="text-center">[Under Development]</h3>
+      <h3 className="text-center">
+        <a href="https://www.canva.com/design/DAEAuAvkKDM/MpD1IkEioKUagCWdI4ZO6Q/view#1">
+          [What we're working towards]
+        </a>
+      </h3>
       <Tabs
         style={styles.tabs}
         id="controlled-tab-example"

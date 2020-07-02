@@ -11,9 +11,6 @@ const TeamPage = () => {
     <>
       <br />
       <h1 style={{ textAlign: "center" }}>Meet the Founders</h1>
-
-      <br></br>
-      <br />
       <br />
       <br />
       <MyCards />
