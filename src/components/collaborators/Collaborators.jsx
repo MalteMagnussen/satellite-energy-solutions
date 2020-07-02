@@ -88,9 +88,51 @@ const Collaborators = () => {
               src={SkylabIgnitePhoto}
             />
           </Card>
+          <Card className="text-center">
+            <Card.Body>
+              <Card.Title>Climate Launchpad</Card.Title>
+              <ClimateLaunchpadText />
+              <Button
+                variant="primary"
+                href="https://climatelaunchpad.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit their site
+              </Button>
+            </Card.Body>
+            <Card.Footer className="text-muted">
+              Joined in June 2020
+            </Card.Footer>
+          </Card>
         </CardColumns>
       </div>
     </>
+  );
+};
+
+const ClimateLaunchpadText = () => {
+  return (
+    <Card.Text style={align}>
+      <b>
+        The future is green. To get there we need massive amounts of green
+        ideas. Ideas that are put into action.
+      </b>
+      <br />
+      Starting a business is the most powerful way to do that. A business can
+      grow based on customer needs and it can grow on a global scale. That is
+      key to tackling climate change.
+      <br />
+      That’s why our motto is: ‘Fixing climate change, one start-up at a time.’
+      <br />
+      All change starts small. With passionate people. People who don’t wait for
+      permission – or for the ‘right’ moment. People willing to explore and
+      eager to act. Who are okay with being called crazy. People who believe in
+      their idea and want to put it into action.
+      <br />
+      We believe in those people. We help them think, act and grow big. So they
+      can help tackle climate change.
+    </Card.Text>
   );
 };
 
