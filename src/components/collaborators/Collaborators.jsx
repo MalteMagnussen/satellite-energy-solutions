@@ -12,6 +12,7 @@ import CopernicusMissionPatch from "./presskit/MissionPatch19.png";
 // import ParsecLogo from "./presskit/fb-opengraph.png";
 import ParsecLogo from "./presskit/2 PARSEC Accelerator LOGO official blue.png";
 import SkylabIgnitePhoto from "./presskit/skylab-ignite.PNG";
+import EuropeanVentureProgrammeImage from "./presskit/VentureProgramme.png";
 
 const align = { textAlign: "justify" };
 
@@ -105,19 +106,62 @@ const Collaborators = () => {
               Joined in June 2020
             </Card.Footer>
           </Card>
+          <Card className="text-center">
+            <Card.Body>
+              <Card.Title>European Venture Programme</Card.Title>
+              <EuropeanVentureProgrammeText />
+              <Button
+                variant="primary"
+                href="https://eurotech-universities.eu/european-venture-programme-apply-before-30-04/"
+                target="_blank"
+              >
+                Visit their site
+              </Button>
+            </Card.Body>
+            <Card.Footer className="text-muted">
+              Joined in July 2020
+            </Card.Footer>
+            <Card.Img
+              variant="bottom"
+              src={EuropeanVentureProgrammeImage}
+              style={imageStyle}
+            />
+          </Card>
         </CardColumns>
       </div>
     </>
   );
 };
 
+const EuropeanVentureProgrammeText = () => {
+  return (
+    <Card.Text style={align}>
+      The European Venture Program (EVP) empowers student entrepreneurs by
+      providing them with a valuable international network and toolkit from the
+      EVP partners.
+      <br />
+      <br />
+      DTU Skylab presents the European Venture Program for the second and final
+      time. Student entrepreneurs gets an opportunity to scale their startup and
+      international network. They will travel to all four EuroTech universities
+      (DTU, EPFL, TU/e, TUM), and will participate in workshops and pitch
+      sessions, get valuable insights from successful peers and visit startups
+      as well as large corporations.
+      <br />
+      <br />
+      This unique project will help the student entrepreneurs gain valuable
+      experience among the best in the technical startup ecosystem and European
+      technical institutions. The grand value of the project lies in knowledge
+      sharing and creating a community of international entrepreneurs.
+    </Card.Text>
+  );
+};
+
 const ClimateLaunchpadText = () => {
   return (
     <Card.Text style={align}>
-      <b>
-        The future is green. To get there we need massive amounts of green
-        ideas. Ideas that are put into action.
-      </b>
+      The future is green. To get there we need massive amounts of green ideas.
+      Ideas that are put into action.
       <br />
       Starting a business is the most powerful way to do that. A business can
       grow based on customer needs and it can grow on a global scale. That is
