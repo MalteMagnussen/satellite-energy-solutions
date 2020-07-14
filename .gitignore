@@ -23,3 +23,6 @@ yarn-debug.log*
 yarn-error.log*
 .env
 src/components/forecasts/biddingzones/ref-countries-2016-01m.geojson.zip
+
+# npmjs
+/dist
