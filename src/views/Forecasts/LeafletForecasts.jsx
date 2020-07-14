@@ -4,7 +4,6 @@ import "./forecast.css";
 import "leaflet/dist/leaflet.css";
 import MenuOptions from "./MenuCard";
 import MapFeatures from "./MapFeatures";
-import { Container, Row, Col } from "react-bootstrap";
 import GridContainer from "components/Grid/GridContainer.js";
 import Grid from "@material-ui/core/Grid";
 import { sizing, flexbox } from "@material-ui/system";
