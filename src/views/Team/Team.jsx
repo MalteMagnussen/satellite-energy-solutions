@@ -4,10 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import CollaboratorCard from "./CollaboratorCard.jsx";
 import GridItem from "components/Grid/GridItem.js";
 import GridContainer from "components/Grid/GridContainer.js";
-import CustomInput from "components/CustomInput/CustomInput.js";
-import CardHeader from "components/Card/CardHeader.js";
+// import CustomInput from "components/CustomInput/CustomInput.js";
+// import CardHeader from "components/Card/CardHeader.js";
 import CardAvatar from "components/Card/CardAvatar.js";
-import CardFooter from "components/Card/CardFooter.js";
+// import CardFooter from "components/Card/CardFooter.js";
 
 import Button from "components/CustomButtons/Button.js";
 import Card from "components/Card/Card.js";
@@ -48,7 +48,7 @@ export default function CardBasic() {
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                <img src={august} alt="August image" />
+                <img src={august} alt="August" />
               </a>
             </CardAvatar>
             <CardBody profile>
@@ -75,7 +75,7 @@ export default function CardBasic() {
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                <img src={andreas} alt="Andreas image" />
+                <img src={andreas} alt="Andreas" />
               </a>
             </CardAvatar>
             <CardBody profile>
@@ -97,7 +97,7 @@ export default function CardBasic() {
           <Card profile>
             <CardAvatar profile>
               <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                <img src={malte} alt="Malte image" />
+                <img src={malte} alt="Malte" />
               </a>
             </CardAvatar>
             <CardBody profile>
@@ -123,7 +123,7 @@ export default function CardBasic() {
         <GridItem xs={12} sm={12} md={6}>
           <img
             className={classes.cardImgTop}
-            alt="Image"
+            alt="The team working hard in Skylab"
             style={{ height: "100%", width: "100%", display: "block" }}
             src={teamImg}
             data-holder-rendered="true"

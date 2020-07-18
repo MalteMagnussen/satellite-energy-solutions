@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '../components/Typography';
@@ -13,7 +12,7 @@ const styles = (theme) => ({
     marginTop: theme.spacing(9),
     marginBottom: theme.spacing(9),
   },
-  button: {
+  border: {
     border: '4px solid currentColor',
     borderRadius: 0,
     height: 'auto',
@@ -21,6 +20,8 @@ const styles = (theme) => ({
   },
   link: {
     marginTop: theme.spacing(3),
+  },
+  link2: {
     marginBottom: theme.spacing(3),
   },
   buoy: {
@@ -33,19 +34,15 @@ function ProductSmokingHero(props) {
 
   return (
     <Container className={classes.root} component="section">
-      <Button className={classes.button}>
-        <Typography variant="h4" component="span">
-          Got any questions? Need help?
+      <Typography variant="h4" component="span" className={classes.border}>
+        Got any questions? Need help?
         </Typography>
-      </Button>
       <Typography variant="subtitle1" className={classes.link}>
         We are here to help. Get in touch!
       </Typography>
-      <img
-        src="/static/themes/onepirate/producBuoy.svg"
-        className={classes.buoy}
-        alt="buoy"
-      />
+      <Typography variant="subtitle1" className={classes.link2}>
+        august_zachariae@hotmail.com
+      </Typography>
     </Container>
   );
 }

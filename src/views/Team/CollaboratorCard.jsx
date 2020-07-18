@@ -30,7 +30,7 @@ export default function CollaboratorCard({ image, title, joined, text, link }) {
       <Card style={{ width: "24rem" }}>
         <img
           className={classes.cardImgTop}
-          alt="Image"
+          alt="Collaborators"
           style={{ height: "100%", width: "100%", display: "block" }}
           src={image}
           data-holder-rendered="true"

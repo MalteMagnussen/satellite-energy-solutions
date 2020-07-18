@@ -28,11 +28,7 @@ export default function SimpleAccordion({
     return (
       <div className={classes.root}>
         <Accordion disabled>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel3a-content"
-            id="panel3a-header"
-          >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.heading}>{title}</Typography>
           </AccordionSummary>
         </Accordion>
@@ -41,15 +37,16 @@ export default function SimpleAccordion({
   } else {
     return (
       <div className={classes.root}>
-        <Accordion onChange={onChange}>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-          >
+        <Accordion
+          onChange={onChange}
+          TransitionProps={{ unmountOnExit: true }}
+        >
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             <Typography className={classes.heading}>{title}</Typography>
           </AccordionSummary>
-          <AccordionDetails>{children}</AccordionDetails>
+          <AccordionDetails>
+            <div className={classes.root}>{children}</div>
+          </AccordionDetails>
         </Accordion>
       </div>
     );

@@ -4,11 +4,11 @@ import "./forecast.css";
 import "leaflet/dist/leaflet.css";
 import MenuOptions from "./MenuCard";
 import MapFeatures from "./MapFeatures";
-import GridContainer from "components/Grid/GridContainer.js";
+// import GridContainer from "components/Grid/GridContainer.js";
 import Grid from "@material-ui/core/Grid";
-import { sizing, flexbox } from "@material-ui/system";
-import Box from "@material-ui/core/Box";
-import GridItem from "components/Grid/GridItem.js";
+// import { sizing, flexbox } from "@material-ui/system";
+// import Box from "@material-ui/core/Box";
+// import GridItem from "components/Grid/GridItem.js";
 import useWindowDimensions from "./windowdimensions";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -53,7 +53,10 @@ const Forecasts = () => {
     });
   }, []);
 
-  const { height, width } = useWindowDimensions();
+  const {
+    height,
+    // width
+  } = useWindowDimensions();
   return (
     <>
       <Grid container>
