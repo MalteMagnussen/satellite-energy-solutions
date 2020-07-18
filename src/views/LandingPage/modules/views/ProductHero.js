@@ -58,7 +58,7 @@ function ProductHero(props) {
         size="large"
         className={classes.button}
         component="a"
-        href="/forecast"
+        href="#/forecast"
       >
         Try it out
       </Button>
