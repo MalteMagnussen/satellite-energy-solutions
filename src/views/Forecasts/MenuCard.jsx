@@ -12,16 +12,9 @@ import Box from "@material-ui/core/Box";
 
 import ChartFor2015Electricity from "./Chart2015Electricity";
 
-/*
- * TODO MAKE MAP ZOOM AND PAN
- */
-const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
-  const [value, setValue] = React.useState(1);
+import Accordion from "./Accordion";
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-  // This is the top Feature of the card.
+const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
   const BiddingZoneFeature = () => {
     return (
       <>
@@ -37,50 +30,28 @@ const MenuOptions = ({ setFeature, feature, zone, lat, lng }) => {
 
   return (
     <>
-      <Paper square>
-        <Tabs
-          value={value}
-          indicatorColor="primary"
-          textColor="primary"
-          onChange={handleChange}
-          centered
-        >
-          <Tab label="Point" onClick={() => setFeature("point")} />
-          <Tab label="Bidding Zones" onClick={() => setFeature("zones")} />
-        </Tabs>
-      </Paper>
-      <TabPanel value={value} index={0}>
-        <div className="text-center">
-          <br />
-          <h5>Point</h5>
-          Marker is currently placed at:
-          <br />
-          lat: {lat}
-          <br />
-          lng: {lng}
-        </div>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
+      <Accordion disabled={true} title={"Graph builder"} />
+      <Accordion disabled={true} title={"Short term forecasts"} />
+      <Accordion disabled={true} title={"Long term forecasts"} />
+      <Accordion
+        title={"Historical Data"}
+        onChange={(event, expanded) =>
+          expanded === true ? setFeature("zones") : setFeature("none")
+        }
+      >
         <BiddingZoneFeature />
-      </TabPanel>
-
-      <br />
-      <br />
-      <Credits />
-    </>
-  );
-};
-
-const Credits = () => {
-  return (
-    <>
-      <small>
-        EN: © EuroGeographics for the administrative boundaries
-        <br />
-        FR: © EuroGeographics pour les limites administratives
-        <br />
-        DE: © EuroGeographics bezüglich der Verwaltungsgrenzen
-      </small>
+      </Accordion>
+      <Accordion disabled={true} title={"Map analytics"} />
+      <Accordion disabled={true} title={"Case study"} />
+      <Accordion title={"Credits"}>
+        <small>
+          EN: © EuroGeographics for the administrative boundaries
+          <br />
+          FR: © EuroGeographics pour les limites administratives
+          <br />
+          DE: © EuroGeographics bezüglich der Verwaltungsgrenzen
+        </small>
+      </Accordion>
     </>
   );
 };

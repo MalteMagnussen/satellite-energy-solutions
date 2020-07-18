@@ -30,8 +30,8 @@ const Forecasts = () => {
   const startLocation = [57.42630884997942, -1.7578125000000002];
   const [lat, setLat] = useState(startLocation[0]);
   const [lng, setLng] = useState(startLocation[1]);
-  const [feature, setFeature] = useState("zones");
-  const [zone, setZone] = useState();
+  const [feature, setFeature] = useState("none");
+  const [zone, setZone] = useState("DE");
 
   const handleClick = (e) => {
     setLat(e.latlng.lat);
