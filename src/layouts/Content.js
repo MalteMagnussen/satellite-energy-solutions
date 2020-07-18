@@ -83,7 +83,7 @@ export default function Admin({ ...rest }) {
       <div className={classes.mainPanel} ref={mainPanel}>
         {/* On the /maps route we want the map to be on full screen 
         - this is not possible if the content and container classes are present because they have some paddings which would make the map smaller */}
-        {window.location.pathname !== "/maps" && window.location.pathname !== "/forecast" ? (
+        {window.location.hash !== "#/maps" && window.location.hash !== "#/forecast" ? (
           <div className={classes.content}>
             <div className={classes.container}>{switchRoutes}</div>
           </div>

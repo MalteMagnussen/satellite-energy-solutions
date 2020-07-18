@@ -56,7 +56,7 @@ const Forecasts = () => {
   const { height, width } = useWindowDimensions();
   return (
     <>
-      <Grid container spacing={3}>
+      <Grid container>
         <Grid item xs={9}>
           <Map
             style={{ height: `${height}px`, width: `100%` }}
