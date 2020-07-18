@@ -216,9 +216,7 @@ export default function CardBasic() {
             </a>
             <br />`,
             }}
-            link={
-              "https://www.skylab.dtu.dk/programmes-and-services/skylab_ignite"
-            }
+            link={"https://www.skylab.dtu.dk/"}
           />
         </GridItem>
         <GridItem xs={12} sm={6} md={3}>
@@ -245,9 +243,7 @@ export default function CardBasic() {
               technical institutions. The grand value of the project lies in knowledge
               sharing and creating a community of international entrepreneurs.`,
             }}
-            link={
-              "https://www.skylab.dtu.dk/programmes-and-services/skylab_ignite"
-            }
+            link={"https://www.skylab.dtu.dk/"}
           />
         </GridItem>
         <GridItem xs={12} sm={6} md={3}>
